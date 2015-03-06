@@ -18,9 +18,6 @@ public abstract class Ship extends Actor
 	
 	
 	
-	 public Ship(int angle2, int size2, Location[] hitPoints) {
-		// TODO Auto-generated constructor stub
-	}
 
 
 
