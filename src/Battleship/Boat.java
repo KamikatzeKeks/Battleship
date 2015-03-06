@@ -19,6 +19,7 @@ public class Boat extends Ship {
 			position[i] = hitPoint;
 			i++;
 		}
+		
 	}
 
 	@Override

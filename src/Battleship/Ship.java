@@ -15,6 +15,12 @@ public abstract class Ship extends Actor
 		super("sprites/destroyer_" + angle + ".gif", 1);
 		this.angle = angle;
 	}
+	
+	
+	
+	 public Ship(int angle2, int size2, Location[] hitPoints) {
+		// TODO Auto-generated constructor stub
+	}
 
 
 
