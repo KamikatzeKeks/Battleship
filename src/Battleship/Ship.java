@@ -10,7 +10,7 @@ public abstract class Ship extends Actor
 	private int size;
 	private Boolean isDestroyed = false; 
 
-	public Ship(int angle, int size, Location[] hitPoints) 
+	public Ship(int angle, Location[] hitPoints) 
  	{		
 		super("sprites/destroyer_" + angle + ".gif", 1);
 		this.angle = angle;

@@ -7,13 +7,13 @@ public class Boat extends Ship {
 	
 
 	Location[] position = new Location[2];
-	int size;
+	int size = 2;
 	Boolean isDestroyed;
 
-	public Boat(int angle, int size, Location[] hitPoints) {
-		super(angle, size, hitPoints);
+	public Boat(int angle, Location[] hitPoints) {
+		super(angle,  hitPoints);
 
-		this.size = size;
+		
 		for (Location hitPoint : hitPoints) {
 			int i = 0;
 			position            [i] = hitPoint;
@@ -40,6 +40,9 @@ public class Boat extends Ship {
 	}
 
 	public void setLocation(Location a, Location b) {
+		
+		position[0] = a;
+		position[1] = b; 
 
 	}
 
