@@ -16,7 +16,7 @@ public class Boat extends Ship {
 		this.size = size;
 		for (Location hitPoint : hitPoints) {
 			int i = 0;
-			position[i] = hitPoint;
+			position            [i] = hitPoint;
 			i++;
 		}
 		
@@ -43,12 +43,6 @@ public class Boat extends Ship {
 
 	}
 
-	public Location[] getHitPoints() {
-		return hitPoints;
-	}
 
-	public void setHitPoints(Location[] hitPoints) {
-		this.hitPoints = hitPoints;
-	}
 
 }
