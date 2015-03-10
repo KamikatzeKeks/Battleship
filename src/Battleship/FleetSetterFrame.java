@@ -3,13 +3,13 @@ package Battleship;
  *
  * @author Brian
  */
-public class FleetSetter extends javax.swing.JDialog {
+public class FleetSetterFrame extends javax.swing.JDialog {
     
 Ship[] fleet  = new Ship[5];
     /**
      * Creates new form SetFleet
      */
-    public FleetSetter(java.awt.Frame parent, boolean modal) {
+    public FleetSetterFrame(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
