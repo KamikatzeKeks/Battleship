@@ -2,11 +2,11 @@ package Battleship;
 
 import ch.aplu.jgamegrid.Location;
 
-public class Boat extends Ship {
+public class PatrolBoat extends Ship {
 	
 	
 
-	public Boat(int angle, int size, Location[] hitPoints) {
+	public PatrolBoat(int angle, int size, Location[] hitPoints) {
 		super(angle, size, hitPoints);
 		for (Location hitPoint : hitPoints) {
 			int i = 0;

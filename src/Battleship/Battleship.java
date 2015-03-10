@@ -10,13 +10,13 @@ import java.awt.event.*;
 
 public class Battleship extends JFrame
 {
-	Ship[] fleetPlayer1 = new Ship[5];
+	Ship[] fleetPlayer1 = new Ship[5]; 
 	Ship[] fleetPlayer2 = new Ship[5];
 	
 	GameGrid gg = new GameGrid(10, 10, 60, Color.green, "sprites/background.png");
 	GameGrid gg2 = new GameGrid(10, 10, 60, Color.red, "sprites/background.png");
 	
-	JButton b = new JButton("Start");
+	JButton jBtnSetFleetPlayer1 = new JButton("Set Fleet Player 1"); 
 	
 	
 	public Battleship()
@@ -31,8 +31,8 @@ public class Battleship extends JFrame
 	    getContentPane().add(gg2, BorderLayout.EAST);
 	    gg2.doRun();
 	    
-	    b.setSize(new Dimension(100,50));
-	    b.addActionListener(new ActionListener() 
+	    jBtnSetFleetPlayer1.setSize(new Dimension(100,50));
+	    jBtnSetFleetPlayer1.addActionListener(new ActionListener() 
 	    {
 	         public void actionPerformed(ActionEvent e)
 	         {
@@ -43,7 +43,7 @@ public class Battleship extends JFrame
 	        	//Game();
 	         }          
 	    });
-	    getContentPane().add(b, BorderLayout.SOUTH);
+	    getContentPane().add(jBtnSetFleetPlayer1, BorderLayout.SOUTH);
 	    
 	}
 	
