@@ -834,7 +834,7 @@ private Location[] getAllShipPositions(Location startPosition, String angle, int
 	
 	shipLength = shipLength -1;
 
-	
+	//TODO anscheinend werden die Locations fehlerhaft gesetzt beim Debuggen viel mir auf dass der groﬂteil null is
 	do{
 		
 		shipLocations[shipLength] = startPosition;
