@@ -50,10 +50,8 @@ public class Battleship extends JFrame {
 
 					FleetSetterFrame player1 = new FleetSetterFrame(null, true); // Erstellt modalen  jDialog
 					fleetPlayer1 = player1.showDialog(); // Zeigt den Dialog und bekommt das Array aus Shiffobjekten  vom Dialog
-					Location l = new Location(1,1);
-					l  = fleetPlayer1[0].getLocation();
-					System.out.println(l.getX());
-					System.out.println(l.getY());
+					
+					fleetPlayer1[0].showLocationPosition();
 
 					// TODO Shiffobjekte im Dialog erzeugen und im return Array
 					// speichern <<< mit der public void Game() Methode;

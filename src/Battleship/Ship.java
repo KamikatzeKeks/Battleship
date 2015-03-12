@@ -9,17 +9,18 @@ public abstract class Ship extends Actor {
 	private int size;
 	private Boolean isDestroyed = false;
 	Location[] position;
+	Location[] hitPoints;
 
-	public Ship(int angle, int size, Location[] hitPoints) 
-	{
+	public Ship(int angle, int size, Location[] hitPoints) {
+
 		super("sprites/destroyer_" + angle + ".gif", 1);
+		this.hitPoints = hitPoints;
 		this.angle = angle;
 		this.size = size;
 		position = new Location[size];
 	}
 
-	public Boolean isDestroyed(Location userShot) 
-	{
+	public Boolean isDestroyed(Location userShot) {
 
 		for (Location position : this.position) {
 
@@ -35,5 +36,8 @@ public abstract class Ship extends Actor {
 		return isDestroyed;
 
 	}
+
+	public abstract void showLocationPosition() ;
+
 
 }

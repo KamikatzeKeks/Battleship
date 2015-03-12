@@ -828,11 +828,12 @@ private String getSelectedJRadioBtn(ButtonGroup buttonGroup){
 private Location[] getAllShipPositions(Location startPosition, String angle, int shipLength){
 //TODO 360 er Buttons in 270er umbennen ... 
 	//TODO Out OF BOUND Exception
-	shipLength = shipLength --;
 	
 	Location[] shipLocations = new Location[shipLength];
 	
 	
+	shipLength = shipLength -1;
+
 	
 	do{
 		
