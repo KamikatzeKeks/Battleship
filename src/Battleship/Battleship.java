@@ -47,16 +47,20 @@ public class Battleship extends JFrame {
 			jBtnSetFleetPlayer1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) // Aktion beimDrücken desButtons "Set Fleet Player 1"													
 				{
-
+					//TODO Schiffklassen ableiten (Carrier etc) 
 					FleetSetterFrame player1 = new FleetSetterFrame(null, true); // Erstellt modalen  jDialog
 					fleetPlayer1 = player1.showDialog(); // Zeigt den Dialog und bekommt das Array aus Shiffobjekten  vom Dialog
 					
-					fleetPlayer1[0].showLocationPosition();
-
-					// TODO Shiffobjekte im Dialog erzeugen und im return Array
-					// speichern <<< mit der public void Game() Methode;
 					
-					// Game();
+					//Testschleife um die Positionen zu überprüfen
+					for(Ship testBody : fleetPlayer1){
+						
+						System.out.println("Schiff: ");
+						testBody.showLocationPosition();
+						
+					}
+
+					
 				}
 			});
 		}
@@ -64,10 +68,6 @@ public class Battleship extends JFrame {
 	}
 
 	
-
-	private void addShipToFleet() {
-
-	}
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

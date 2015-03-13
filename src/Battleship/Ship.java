@@ -8,7 +8,6 @@ public abstract class Ship extends Actor {
 	private int angle;
 	private int size;
 	private Boolean isDestroyed = false;
-	Location[] position;
 	Location[] hitPoints;
 
 	public Ship(int angle, int size, Location[] hitPoints) {
@@ -17,14 +16,13 @@ public abstract class Ship extends Actor {
 		this.hitPoints = hitPoints;
 		this.angle = angle;
 		this.size = size;
-		position = new Location[size];
 	}
 
 	public Boolean isDestroyed(Location userShot) {
 
-		for (Location position : this.position) {
+		for (Location hitPoint : hitPoints) {
 
-			if (position.equals(userShot)) {
+			if (hitPoint.equals(userShot)) {
 				size--;
 			}
 			if (size == 0) {
@@ -37,7 +35,13 @@ public abstract class Ship extends Actor {
 
 	}
 
-	public abstract void showLocationPosition() ;
+	public void showLocationPosition() {
 
+		for (Location bla : hitPoints) {
 
+			System.out.println("x: " + bla.getX() + " y: " + bla.getY());
+
+		}
+
+	}
 }
