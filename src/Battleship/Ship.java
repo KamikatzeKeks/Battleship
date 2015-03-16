@@ -34,6 +34,12 @@ public abstract class Ship extends Actor {
 		return isDestroyed;
 
 	}
+	
+	public Location getStartLocation(){
+				
+		return hitPoints[hitPoints.length -1];
+		
+	}
 
 	public void showLocationPosition() {
 

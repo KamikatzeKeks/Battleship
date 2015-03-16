@@ -51,10 +51,9 @@ public class Battleship extends JFrame {
 					FleetSetterFrame player1 = new FleetSetterFrame(null, true); // Erstellt modalen  jDialog
 					fleetPlayer1 = player1.showDialog(); // Zeigt den Dialog und bekommt das Array aus Shiffobjekten  vom Dialog
 					
-					
+					fleetPlayer1[0].getStartLocation();
 					//Testschleife um die Positionen zu überprüfen
-					for(Ship testBody : fleetPlayer1){
-						
+					for(Ship testBody : fleetPlayer1){						
 						System.out.println("Schiff: ");
 						testBody.showLocationPosition();
 						
