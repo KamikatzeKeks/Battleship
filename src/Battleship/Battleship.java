@@ -8,12 +8,15 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Battleship extends JFrame {
-	
-	//TODO Fehler beheben bei dem es Möglich ist die ganze Flotte mit permanenten feuern auf einen Punkt(der trifft) zu zerstören
-	//TODO Anzeigen wo schon hingeschossen wurde
-	//TODO Anzeigen ob getroffen wurde 
-	//TODO Schiffe werden vertikal berechnet bei 0° aber horizontal angezeigt
-	
+
+	// TODO Fehler beheben bei dem es Möglich ist ein Schiff e mit
+	// permanenten feuern auf einen Punkt(der trifft) zu zerstören
+	// TODO Anzeigen wo schon hingeschossen wurde
+	// TODO Anzeigen ob getroffen wurde
+	// TODO Schiffe werden vertikal berechnet bei 0° aber horizontal angezeigt
+	//TODO Schiffe dürfen nicht außerhalb des Spielfeldes platziert werden
+	//TODO Es dürfen keine Schiffe auf den selben Feldern platziert werden
+
 	GameGrid jGameGridPlayer1 = new GameGrid(10, 10, 60, Color.green,
 			"sprites/background.png");
 	GameGrid jGameGridPlayer2 = new GameGrid(10, 10, 60, Color.red,
@@ -36,20 +39,27 @@ public class Battleship extends JFrame {
 			this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 			this.setSize(1350, 700);
 		}
-		
+
 		getContentPane().add(jPanelButton, BorderLayout.SOUTH);
 		jPanelButton.add(jBtnSetFleetPlayer1);
 		jPanelButton.add(jBtnStartGame);
 		jPanelButton.add(jBtnShoot);
 		jPanelButton.add(jBtnSetFleetPlayer2);
-		
 
 		{
 			jBtnSetFleetPlayer1.setSize(new Dimension(100, 50));
 		}
-		
+
 		{
 			jBtnSetFleetPlayer2.setSize(new Dimension(100, 50));
+		}
+		
+		{
+			jBtnStartGame.setEnabled(true);
+		}
+		
+		{
+			jBtnShoot.setVisible(false);
 		}
 
 		// GameGrid Player1
@@ -66,78 +76,38 @@ public class Battleship extends JFrame {
 
 		// Action Listeners
 		{
-			jBtnSetFleetPlayer1.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) // Aktion beimDrücken desButtons "Set Fleet Player 1"													
-				{
-					//TODO Schiffklassen ableiten (Carrier etc) 
-					FleetSetterFrame player1 = new FleetSetterFrame(null, true); // Erstellt modalen  jDialog
-					fleetPlayer1 = player1.showDialog(); // Zeigt den Dialog und bekommt das Array aus Shiffobjekten  vom Dialog
-					
-					
-					for (Ship currentActor: fleetPlayer1){
-						jGameGridPlayer1.addActor(currentActor, currentActor.getStartLocation());
-					}
-					
-					jBtnSetFleetPlayer1.setEnabled(false);
-					//Testschleife um die Positionen zu überprüfen
-					for(Ship testBody : fleetPlayer1){						
-						System.out.println("Schiff: ");
-						testBody.showLocationPosition();
-						
-					}
-
-					
-				}
-			});
+			
+			jBtnSetFleetPlayer1.addActionListener(new java.awt.event.ActionListener()  {
+							public void actionPerformed(ActionEvent evt) {
+					jBtnSetFleetPlayer1ActionPerformed(evt);
+				}});
+			
+			
 			jBtnSetFleetPlayer2.addActionListener(new ActionListener() {
-				
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					
-					//TODO Schiffklassen ableiten (Carrier etc) 
-					FleetSetterFrame player2 = new FleetSetterFrame(null, true); // Erstellt modalen  jDialog
-					fleetPlayer2 = player2.showDialog(); // Zeigt den Dialog und bekommt das Array aus Shiffobjekten  vom Dialog
-					
-					
-					for (Ship currentActor: fleetPlayer2){
-						jGameGridPlayer2.addActor(currentActor, currentActor.getStartLocation());
-					}
-					
-					jBtnSetFleetPlayer1.setEnabled(false);					
-				}
-			});
-			
-			jBtnStartGame.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					
-					jBtnSetFleetPlayer1.setVisible(false);
-					jBtnSetFleetPlayer2.setVisible(false);
-					jBtnStartGame.setVisible(false);
-					
-				}
-			});
-			
-			jBtnShoot.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					battleshipRounds();
-				}
-			});
-			
-					
-		}
+				public void actionPerformed(ActionEvent evt) {
+					jBtnSetFleetPlayer2ActionPerformed(evt);
+				}});
 
+			jBtnStartGame.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent evt) {						
+					jBtnStartGameActionPerformed(evt);
+				}
+			});
+
+			jBtnShoot.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent evt) {
+					jBtnShootActionPerformed(evt);
+				}
+			});
+
+		}
 	}
+		
 
 	public void battleshipRounds() {
 
 		playerShotFrame playerShotFrame = new playerShotFrame(null, true);
 		Location playerShot;
-	
 
 		playerShot = playerShotFrame.showDialog();
 
@@ -167,14 +137,73 @@ public class Battleship extends JFrame {
 		}
 
 		if (player1FleetDestroyed == 5) {
-			
-			//TODO Handlings falls gewonnen
+
+			// TODO Handlings falls gewonnen
 			JOptionPane.showMessageDialog(null, "Player 2 won");
 		} else if (player2FleetDestroyed == 5) {
 			JOptionPane.showMessageDialog(null, "Player 1 won");
 
 		}
 
+	}
+	
+
+	private void jBtnSetFleetPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO Schiffklassen ableiten (Carrier etc)
+				FleetSetterFrame player1 = new FleetSetterFrame(null, true); // Erstellt
+																				// modalen
+																				// jDialog
+				fleetPlayer1 = player1.showDialog(); // Zeigt den Dialog und
+														// bekommt das Array
+														// aus Shiffobjekten
+														// vom Dialog
+
+				for (Ship currentActor : fleetPlayer1) {
+					jGameGridPlayer1.addActor(currentActor,
+							currentActor.getStartLocation());
+				}
+
+				jBtnSetFleetPlayer1.setEnabled(false);
+				// Testschleife um die Positionen zu überprüfen
+				for (Ship testBody : fleetPlayer1) {
+					System.out.println("Schiff: ");
+					testBody.showLocationPosition();
+
+				}
+		
+		
+		
+	}
+
+	
+
+	private void jBtnSetFleetPlayer2ActionPerformed(
+			java.awt.event.ActionEvent evt) {
+		
+
+		// TODO Schiffklassen ableiten (Carrier etc)
+		FleetSetterFrame player2 = new FleetSetterFrame(null, true); //modaler Dialog zum festlegen der Schiffspositionen
+		fleetPlayer2 = player2.showDialog();											 // anzeigen des Dialogs Rückgabewert Array aus Schiffen											// aus Shiffobjekten												// vom Dialog
+
+		for (Ship currentActor : fleetPlayer2) {
+			jGameGridPlayer2.addActor(currentActor,
+					currentActor.getStartLocation());
+		}
+		jBtnSetFleetPlayer2.setEnabled(false);
+	}
+
+	private void jBtnStartGameActionPerformed(java.awt.event.ActionEvent evt) {
+		
+		if(jBtnSetFleetPlayer1.isEnabled() == false && jBtnSetFleetPlayer2.isEnabled() == false){
+		jBtnSetFleetPlayer1.setVisible(false);
+		jBtnSetFleetPlayer2.setVisible(false);
+		jBtnShoot.setVisible(true);
+		jBtnStartGame.setVisible(false);
+		}
+	}
+
+	private void jBtnShootActionPerformed(java.awt.event.ActionEvent evt) {
+		battleshipRounds();
 	}
 
 	public static void main(String[] args) {

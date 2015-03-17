@@ -20,10 +20,7 @@ public abstract class Ship extends Actor {
 
 	public Boolean isDestroyed(Location userShot) {
 		
-		//TODO Fehler beheben bei dem es Möglich ist die ganze Flotte mit permanenten feuern auf einen Punkt(der trifft) zu zerstören
-		//TODO Anzeigen wo schon hingeschossen wurde
-		//TODO Anzeigen ob getroffen wurde 
-		//TODO Schiffe werden vertikal berechnet bei 0° aber horizontal angezeigt
+
 
 		for (Location hitPoint : hitPoints) {
 
