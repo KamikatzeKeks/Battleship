@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class Battleship extends JFrame {
 
@@ -29,6 +30,8 @@ public class Battleship extends JFrame {
 	JPanel jPanelButton = new JPanel();
 	Ship[] fleetPlayer1 = new Ship[5];
 	Ship[] fleetPlayer2 = new Ship[5];
+	ArrayList<Location> player1Shots = new ArrayList<Location>();
+	ArrayList<Location> player2Shots = new ArrayList<Location>();
 	int player1FleetDestroyed = 0;
 	int player2FleetDestroyed = 0;
 	boolean player1Turn = true; // TODO umbennen in Usershot
@@ -110,30 +113,52 @@ public class Battleship extends JFrame {
 		Location playerShot;
 
 		playerShot = playerShotFrame.showDialog();
-
-		if (player1Turn == true) {
+				
+		
+		if (player1Turn == true) {				//Wählt wer an der Reihe ist
+			JOptionPane.showMessageDialog(null,"Player1");
 
 			player1Turn = false;
+			/*
+			 * Der folgende Block durchläuft ein Array mit bereits angeschossenen Feldern
+			 * Wurde ein Feld schonmal beschossen wird ein Schiff nicht mehr gefragt ob es getroffen wurde.
+			 * Auf diese Weise wird verhindert, dass man mit schießen auf den selben hitPoint ein ganzes Schiff zerstören kann
+			 */
+			
+			//TODO Überspringt die schleife weil kein Objekt in der Liste nochmal anschauen
+			for(Location playerShots : player1Shots){				
+				if(playerShots.equals(playerShot)){				
+					JOptionPane.showMessageDialog(null,"Already Shot");
+					player1Shots.add(playerShot);
 
-			for (Ship ship : fleetPlayer1) {
-
-				if (ship.isDestroyed(playerShot) == true) {
-					player1FleetDestroyed++;
+				}else{					
+					for (Ship ship : fleetPlayer1) {
+						if (ship.isDestroyed(playerShot) == true) {
+							player1FleetDestroyed++;
+							player1Shots.add(playerShot);
+						}						
+					}					
 				}
-
 			}
 
 		} else {
+			JOptionPane.showMessageDialog(null,"Player2");
+
 			player1Turn = true;
-
-			for (Ship ship : fleetPlayer2) {
-
-				if (ship.isDestroyed(playerShot) == true) {
-					player2FleetDestroyed++;
+			
+			for(Location playerShots:player2Shots){
+				if(playerShots.equals(playerShot)){		
+					JOptionPane.showMessageDialog(null,"Already Shot");
+					player2Shots.add(playerShot);
+				}else{	
+					for (Ship ship : fleetPlayer2) {
+						if (ship.isDestroyed(playerShot) == true) {
+							player2FleetDestroyed++;
+							player2Shots.add(playerShot);
+						}
+					}
 				}
-
 			}
-
 		}
 
 		if (player1FleetDestroyed == 5) {
