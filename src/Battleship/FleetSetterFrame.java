@@ -781,10 +781,10 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 
 		// TODO zu Ints ummünzen
 		//TODO Überprüfung, dass Schiffe nicht auf den selben Feldern stehen 
-		fleet[0] = new Patrolboat(Integer.parseInt(selectedCarrierAngle), 5,carrierPositions);
-		fleet[1] = new Patrolboat(Integer.parseInt(selectedDestroyer1Angle), 4,destroyer1Positions);
-		fleet[2] = new Patrolboat(Integer.parseInt(selectedDestroyer2Angle), 4,destroyer2Positions);
-		fleet[3] = new Patrolboat(Integer.parseInt(selectedSubmarineAngle), 3,submarinePositions);
+		fleet[0] = new Carrier(Integer.parseInt(selectedCarrierAngle), 5,carrierPositions);
+		fleet[1] = new Destroyer(Integer.parseInt(selectedDestroyer1Angle), 4,destroyer1Positions);
+		fleet[2] = new Destroyer(Integer.parseInt(selectedDestroyer2Angle), 4,destroyer2Positions);
+		fleet[3] = new Submarine(Integer.parseInt(selectedSubmarineAngle), 3,submarinePositions);
 		fleet[4] = new Patrolboat(Integer.parseInt(selectedPatrolboatAngle), 2,patrolboatPositions);
 
 	}
