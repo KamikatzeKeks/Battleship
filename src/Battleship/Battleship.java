@@ -116,7 +116,18 @@ public class Battleship extends JFrame {
 				
 		
 		if (player1Turn == true) {				//Wählt wer an der Reihe ist
+			
+			for (Ship ship : fleetPlayer2) 
+			{
+				ship.hide();
+			}
+			
 			JOptionPane.showMessageDialog(null,"Player1");
+			
+			for (Ship ship : fleetPlayer1) 
+			{
+				ship.show();
+			}
 
 			player1Turn = false;
 			/*
@@ -141,8 +152,21 @@ public class Battleship extends JFrame {
 				}
 			}
 
-		} else {
+		} 
+		else 
+		{
+			
+			for (Ship ship : fleetPlayer1) 
+			{
+				ship.hide();
+			}
+			
 			JOptionPane.showMessageDialog(null,"Player2");
+			
+			for (Ship ship : fleetPlayer2) 
+			{
+				ship.show();
+			}
 
 			player1Turn = true;
 			
@@ -196,8 +220,13 @@ public class Battleship extends JFrame {
 
 				}
 		
-		
-		
+				JOptionPane.showMessageDialog(null, "Player1 ships ready.");
+				
+				for (Ship ship : fleetPlayer1) 
+				{
+					ship.hide();
+				}
+				
 	}
 
 	
@@ -215,6 +244,13 @@ public class Battleship extends JFrame {
 					currentActor.getStartLocation());
 		}
 		jBtnSetFleetPlayer2.setEnabled(false);
+		
+		JOptionPane.showMessageDialog(null, "Player2 ships ready.");
+		
+		for (Ship ship : fleetPlayer2) 
+		{
+			ship.hide();
+		}
 	}
 
 	private void jBtnStartGameActionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,6 +260,11 @@ public class Battleship extends JFrame {
 		jBtnSetFleetPlayer2.setVisible(false);
 		jBtnShoot.setVisible(true);
 		jBtnStartGame.setVisible(false);
+		}
+		
+		for (Ship ship : fleetPlayer2) 
+		{
+			ship.show();
 		}
 	}
 
