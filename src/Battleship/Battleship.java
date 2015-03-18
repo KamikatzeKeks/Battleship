@@ -22,7 +22,7 @@ public class Battleship extends JFrame {
 			"sprites/background.png");
 	GameGrid jGameGridPlayer2 = new GameGrid(10, 10, 60, Color.red,
 			"sprites/background.png");
-
+	
 	JButton jBtnSetFleetPlayer1 = new JButton("Set Fleet Player 1");
 	JButton jBtnSetFleetPlayer2 = new JButton("Set Fleet Player 2");
 	JButton jBtnStartGame = new JButton("Start Game");
@@ -138,7 +138,10 @@ public class Battleship extends JFrame {
 					}					
 				}
 			}
-
+			
+			GGBackground bg = jGameGridPlayer2.getBg();
+			bg.fillCell(playerShot, Color.red);
+			
 		} 
 		else 
 		{
@@ -157,6 +160,10 @@ public class Battleship extends JFrame {
 					}
 				}
 			}
+			
+			GGBackground bg = jGameGridPlayer1.getBg();
+			bg.fillCell(playerShot, Color.red);
+			
 		}
 
 		if (player1FleetDestroyed == 5) {
