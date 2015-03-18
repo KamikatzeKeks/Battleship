@@ -255,7 +255,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		});
 
 		jBtnGroupPatrolBoat.add(jRBtnCarrier94);
-		jRBtnCarrier94.setText("90°");
+		jRBtnCarrier94.setText("90");
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
 				getContentPane());
