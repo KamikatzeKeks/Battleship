@@ -111,24 +111,11 @@ public class Battleship extends JFrame {
 
 		playerShotFrame playerShotFrame = new playerShotFrame(null, true);
 		Location playerShot;
-
-		playerShot = playerShotFrame.showDialog();
 				
+		playerShot = playerShotFrame.showDialog();
 		
 		if (player1Turn == true) {				//Wählt wer an der Reihe ist
 			
-			for (Ship ship : fleetPlayer2) 
-			{
-				ship.hide();
-			}
-			
-			JOptionPane.showMessageDialog(null,"Player1");
-			
-			for (Ship ship : fleetPlayer1) 
-			{
-				ship.show();
-			}
-
 			player1Turn = false;
 			/*
 			 * Der folgende Block durchläuft ein Array mit bereits angeschossenen Feldern
@@ -155,19 +142,6 @@ public class Battleship extends JFrame {
 		} 
 		else 
 		{
-			
-			for (Ship ship : fleetPlayer1) 
-			{
-				ship.hide();
-			}
-			
-			JOptionPane.showMessageDialog(null,"Player2");
-			
-			for (Ship ship : fleetPlayer2) 
-			{
-				ship.show();
-			}
-
 			player1Turn = true;
 			
 			for(Location playerShots:player2Shots){
@@ -193,6 +167,36 @@ public class Battleship extends JFrame {
 			JOptionPane.showMessageDialog(null, "Player 1 won");
 
 		}
+		
+		if (player1Turn == true) 
+		{
+			for (Ship ship : fleetPlayer2) 
+			{
+				ship.hide();
+			}
+			
+			JOptionPane.showMessageDialog(null, "Player 1 turn.");
+			
+			for (Ship ship : fleetPlayer1) 
+			{
+				ship.show();
+			}
+		}
+		else
+		{
+			for (Ship ship : fleetPlayer1) 
+			{
+				ship.hide();
+			}
+			
+			JOptionPane.showMessageDialog(null, "Player 2 turn.");
+			
+			for (Ship ship : fleetPlayer2) 
+			{
+				ship.show();
+			}
+		}
+		
 
 	}
 	
@@ -262,7 +266,9 @@ public class Battleship extends JFrame {
 		jBtnStartGame.setVisible(false);
 		}
 		
-		for (Ship ship : fleetPlayer2) 
+		JOptionPane.showMessageDialog(null,"Player1's turn.");
+		
+		for (Ship ship : fleetPlayer1) 
 		{
 			ship.show();
 		}
