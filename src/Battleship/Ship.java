@@ -10,9 +10,9 @@ public abstract class Ship extends Actor {
 	private Boolean isDestroyed = false;
 	Location[] hitPoints;
 
-	public Ship(int angle, int size, Location[] hitPoints) {
+	public Ship(int angle, int size, Location[] hitPoints,String shipType) {
 
-		super("sprites/destroyer_" + angle + ".gif", 1);
+		super("sprites/"+shipType + "_" + angle + ".gif", 1);
 		this.hitPoints = hitPoints;
 		this.angle = angle;
 		this.size = size;

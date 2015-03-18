@@ -6,7 +6,7 @@ public class Patrolboat extends Ship {
 
 
 	public Patrolboat(int angle, int size, Location[] hitPoints) {
-		super(angle, size, hitPoints);
+		super(angle, size, hitPoints, "patrolBoat" );
 	}
 
 	public void setLocation(Location a, Location b) {
