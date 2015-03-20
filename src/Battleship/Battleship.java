@@ -139,7 +139,9 @@ public class Battleship extends JFrame {
 				}
 			}
 			
-			GGBackground bg = jGameGridPlayer2.getBg();
+			//Färbt das abgeschossene Feld Rot
+			//TODO Muss noch angepasst werden. Bei Treffer rot und sonst grün.
+			GGBackground bg = jGameGridPlayer2.getBg(); 
 			bg.fillCell(playerShot, Color.red);
 			
 		} 
