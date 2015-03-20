@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class Battleship extends JFrame {
 
@@ -117,25 +118,47 @@ public class Battleship extends JFrame {
 		if (player1Turn == true) {				//Wählt wer an der Reihe ist
 			
 			player1Turn = false;
+			ListIterator<Location> i = player1Shots.listIterator(); // erstellt ein Iterable Object von player1Shots
+			
 			/*
 			 * Der folgende Block durchläuft ein Array mit bereits angeschossenen Feldern
 			 * Wurde ein Feld schonmal beschossen wird ein Schiff nicht mehr gefragt ob es getroffen wurde.
 			 * Auf diese Weise wird verhindert, dass man mit schießen auf den selben hitPoint ein ganzes Schiff zerstören kann
 			 */
+			//Hab es mit einem Iterator umgesetzt sonst kann man wärend der Iteration nicht 
+			// Objekte in den Array anhängen ohne ein Error zu erzuegen.
 			
-			//TODO Überspringt die schleife weil kein Objekt in der Liste nochmal anschauen
-			for(Location playerShots : player1Shots){				
-				if(playerShots.equals(playerShot)){				
-					JOptionPane.showMessageDialog(null,"Already Shot");
-					player1Shots.add(playerShot);
-
-				}else{					
-					for (Ship ship : fleetPlayer1) {
-						if (ship.isDestroyed(playerShot) == true) {
-							player1FleetDestroyed++;
-							player1Shots.add(playerShot);
-						}						
-					}					
+			if (!i.hasNext())    //Wenn der Array leer ist wird es mit der ersten Location gefüllt
+			{
+				for (Ship ship : fleetPlayer1) 
+				{
+					if (ship.isDestroyed(playerShot) == true) 
+					{
+						player1FleetDestroyed++;
+						i.add(playerShot);
+					}						
+				}	
+			}
+			else
+			{
+				while(i.hasNext())
+				{				
+					if(i.equals(playerShot))
+					{				
+						JOptionPane.showMessageDialog(null,"Already Shot");
+						//i.add(playerShot); Brauch man doch net wenn es schon exestiert oder?
+					}
+					else
+					{					
+						for (Ship ship : fleetPlayer1) 
+						{
+							if (ship.isDestroyed(playerShot) == true) 
+							{
+								player1FleetDestroyed++;
+								i.add(playerShot);
+							}						
+						}					
+					}
 				}
 			}
 			
@@ -149,16 +172,38 @@ public class Battleship extends JFrame {
 		{
 			player1Turn = true;
 			
-			for(Location playerShots:player2Shots){
-				if(playerShots.equals(playerShot)){		
-					JOptionPane.showMessageDialog(null,"Already Shot");
-					player2Shots.add(playerShot);
-				}else{	
-					for (Ship ship : fleetPlayer2) {
-						if (ship.isDestroyed(playerShot) == true) {
-							player2FleetDestroyed++;
-							player2Shots.add(playerShot);
-						}
+			ListIterator<Location> i = player2Shots.listIterator();
+			
+			if (!i.hasNext())
+			{
+				for (Ship ship : fleetPlayer2) 
+				{
+					if (ship.isDestroyed(playerShot) == true) 
+					{
+						player2FleetDestroyed++;
+						i.add(playerShot);
+					}						
+				}	
+			}
+			else
+			{
+				while(i.hasNext())
+				{				
+					if(i.equals(playerShot))
+					{				
+						JOptionPane.showMessageDialog(null,"Already Shot");
+						i.add(playerShot);
+					}
+					else
+					{					
+						for (Ship ship : fleetPlayer2) 
+						{
+							if (ship.isDestroyed(playerShot) == true) 
+							{
+								player2FleetDestroyed++;
+								i.add(playerShot);
+							}						
+						}					
 					}
 				}
 			}
