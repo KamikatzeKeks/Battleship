@@ -130,35 +130,38 @@ public class Battleship extends JFrame {
 			
 			if (!i.hasNext())    //Wenn der Array leer ist wird es mit der ersten Location gefüllt
 			{
+				player1Shots.add(playerShot);
 				for (Ship ship : fleetPlayer1) 
 				{
 					if (ship.isDestroyed(playerShot) == true) 
 					{
 						player1FleetDestroyed++;
-						i.add(playerShot);
 					}						
 				}	
 			}
 			else
 			{
 				while(i.hasNext())
-				{				
-					if(i.equals(playerShot))
+				{	
+					Location next = i.next();
+					
+					if(next.equals(playerShot))
 					{				
 						JOptionPane.showMessageDialog(null,"Already Shot");
-						//i.add(playerShot); Brauch man doch net wenn es schon exestiert oder?
+						playerShot = playerShotFrame.showDialog();
+						while(i.hasPrevious()){i.previous();} //rudert den Iterator zurück damit er wieder von Anfang überprüft wird falls wieder etwas falsches eingegeben wurde. 
 					}
-					else
-					{					
-						for (Ship ship : fleetPlayer1) 
-						{
-							if (ship.isDestroyed(playerShot) == true) 
-							{
-								player1FleetDestroyed++;
-								i.add(playerShot);
-							}						
-						}					
-					}
+				}
+				player1Shots.add(playerShot);
+				
+				// War dein Code. Weis noch net genau was der macht und ob der funktioniert. 
+				for (Ship ship : fleetPlayer1) 
+				{
+					if (ship.isDestroyed(playerShot) == true) 
+					{
+						player1FleetDestroyed++;
+						
+					}						
 				}
 			}
 			
@@ -176,36 +179,38 @@ public class Battleship extends JFrame {
 			
 			if (!i.hasNext())
 			{
+				player2Shots.add(playerShot);
 				for (Ship ship : fleetPlayer2) 
 				{
 					if (ship.isDestroyed(playerShot) == true) 
 					{
 						player2FleetDestroyed++;
-						i.add(playerShot);
 					}						
 				}	
 			}
 			else
 			{
 				while(i.hasNext())
-				{				
-					if(i.equals(playerShot))
+				{	
+					Location next = i.next();
+					
+					if(next.equals(playerShot))
 					{				
 						JOptionPane.showMessageDialog(null,"Already Shot");
-						i.add(playerShot);
-					}
-					else
-					{					
-						for (Ship ship : fleetPlayer2) 
-						{
-							if (ship.isDestroyed(playerShot) == true) 
-							{
-								player2FleetDestroyed++;
-								i.add(playerShot);
-							}						
-						}					
+						playerShot = playerShotFrame.showDialog();
+						while(i.hasPrevious()){i.previous();}
 					}
 				}
+				player2Shots.add(playerShot);
+					
+					/*for (Ship ship : fleetPlayer2) 
+					{
+						if (ship.isDestroyed(playerShot) == true) 
+						{
+							player2FleetDestroyed++;
+						}						
+					}*/
+				
 			}
 			
 			GGBackground bg = jGameGridPlayer1.getBg();
