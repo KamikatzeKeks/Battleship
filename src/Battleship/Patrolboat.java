@@ -9,10 +9,6 @@ public class Patrolboat extends Ship {
 		super(angle, size, hitPoints, "patrolboat" );
 	}
 
-	public void setLocation(Location a, Location b) {
-
-	}
-
 
 	
 

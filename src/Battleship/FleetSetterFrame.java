@@ -56,13 +56,13 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jRBtnCarrier92 = new javax.swing.JRadioButton();
 		jRBtnCarrier362 = new javax.swing.JRadioButton();
 		jRBtnCarrier182 = new javax.swing.JRadioButton();
-		jRBtnCarrier2 = new javax.swing.JRadioButton();
+		jRBtnDestroyer20 = new javax.swing.JRadioButton();
 		jRBtnCarrier183 = new javax.swing.JRadioButton();
-		jRBtnCarrier3 = new javax.swing.JRadioButton();
+		jRBtnSubmarine0 = new javax.swing.JRadioButton();
 		jRBtnCarrier363 = new javax.swing.JRadioButton();
 		jRBtnCarrier93 = new javax.swing.JRadioButton();
 		jRBtnCarrier184 = new javax.swing.JRadioButton();
-		jRBtnCarrier4 = new javax.swing.JRadioButton();
+		jRBtnPatrolboat0 = new javax.swing.JRadioButton();
 		jRBtnCarrier364 = new javax.swing.JRadioButton();
 		jRBtnCarrier94 = new javax.swing.JRadioButton();
 
@@ -142,6 +142,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 
 		jBtnGroupCarrier.add(jRBtnCarrier0);
 		jRBtnCarrier0.setText("0");
+		jRBtnCarrier0.setSelected(true);
 
 		jCbDestroyer2X.setModel(new javax.swing.DefaultComboBoxModel(
 				new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9",
@@ -181,6 +182,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 
 		jBtnGroupDestroyer1.add(jRBtnDestroyer10);
 		jRBtnDestroyer10.setText("0");
+		jRBtnDestroyer10.setSelected(true);
 
 		jBtnGroupDestroyer1.add(jRBtnDestroyer1180);
 		jRBtnDestroyer1180.setText("180");
@@ -212,16 +214,18 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jBtnGroupDestroyer2.add(jRBtnCarrier182);
 		jRBtnCarrier182.setText("180");
 
-		jBtnGroupDestroyer2.add(jRBtnCarrier2);
-		jRBtnCarrier2.setText("0");
+		jBtnGroupDestroyer2.add(jRBtnDestroyer20);
+		jRBtnDestroyer20.setText("0");
+		jRBtnDestroyer20.setSelected(true);
 
 		jBtnGroupSubmarine.add(jRBtnCarrier183);
 		jRBtnCarrier183.setText("180");
 		jRBtnCarrier183.setContentAreaFilled(false);
 
-		jBtnGroupSubmarine.add(jRBtnCarrier3);
-		jRBtnCarrier3.setText("0");
-		jRBtnCarrier3.setContentAreaFilled(false);
+		jBtnGroupSubmarine.add(jRBtnSubmarine0);
+		jRBtnSubmarine0.setText("0");
+		jRBtnSubmarine0.setContentAreaFilled(false);
+		jRBtnSubmarine0.setSelected(true);
 
 		jBtnGroupSubmarine.add(jRBtnCarrier363);
 		jRBtnCarrier363.setText("270");
@@ -241,8 +245,9 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jBtnGroupPatrolBoat.add(jRBtnCarrier184);
 		jRBtnCarrier184.setText("180");
 
-		jBtnGroupPatrolBoat.add(jRBtnCarrier4);
-		jRBtnCarrier4.setText("0");
+		jBtnGroupPatrolBoat.add(jRBtnPatrolboat0);
+		jRBtnPatrolboat0.setText("0");
+		jRBtnPatrolboat0.setSelected(true);
 
 		jBtnGroupPatrolBoat.add(jRBtnCarrier364);
 		jRBtnCarrier364.setText("270");
@@ -311,7 +316,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 																										70,
 																										70)
 																								.addComponent(
-																										jRBtnCarrier2))))
+																										jRBtnDestroyer20))))
 												.addComponent(jBtnSetFleet)
 												.addGroup(
 														layout.createSequentialGroup()
@@ -351,7 +356,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 																										70,
 																										70)
 																								.addComponent(
-																										jRBtnCarrier4))
+																										jRBtnPatrolboat0))
 																				.addComponent(
 																						jRBtnCarrier364)
 																				.addComponent(
@@ -399,7 +404,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 																										70,
 																										70)
 																								.addComponent(
-																										jRBtnCarrier3))))
+																										jRBtnSubmarine0))))
 												.addGroup(
 														javax.swing.GroupLayout.Alignment.TRAILING,
 														layout.createSequentialGroup()
@@ -610,7 +615,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 																				.addComponent(
 																						jRBtnCarrier182)
 																				.addComponent(
-																						jRBtnCarrier2))
+																						jRBtnDestroyer20))
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addComponent(
@@ -650,7 +655,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 																				.addComponent(
 																						jRBtnCarrier183)
 																				.addComponent(
-																						jRBtnCarrier3))
+																						jRBtnSubmarine0))
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addComponent(
@@ -690,7 +695,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 																				.addComponent(
 																						jRBtnCarrier184)
 																				.addComponent(
-																						jRBtnCarrier4))
+																						jRBtnPatrolboat0))
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addComponent(
@@ -863,13 +868,13 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 	private javax.swing.JRadioButton jRBtnCarrier182;
 	private javax.swing.JRadioButton jRBtnCarrier183;
 	private javax.swing.JRadioButton jRBtnCarrier184;
-	private javax.swing.JRadioButton jRBtnCarrier2;
-	private javax.swing.JRadioButton jRBtnCarrier3;
+	private javax.swing.JRadioButton jRBtnDestroyer20;
+	private javax.swing.JRadioButton jRBtnSubmarine0;
 	private javax.swing.JRadioButton jRBtnCarrier360;
 	private javax.swing.JRadioButton jRBtnCarrier362;
 	private javax.swing.JRadioButton jRBtnCarrier363;
 	private javax.swing.JRadioButton jRBtnCarrier364;
-	private javax.swing.JRadioButton jRBtnCarrier4;
+	private javax.swing.JRadioButton jRBtnPatrolboat0;
 	private javax.swing.JRadioButton jRBtnCarrier90;
 	private javax.swing.JRadioButton jRBtnCarrier92;
 	private javax.swing.JRadioButton jRBtnCarrier93;
