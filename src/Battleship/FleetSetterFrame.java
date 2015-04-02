@@ -17,7 +17,6 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		initComponents();
 	}
 
-
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed"
 	// desc="Generated Code">//GEN-BEGIN:initComponents
@@ -27,7 +26,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jBtnGroupDestroyer1 = new javax.swing.ButtonGroup();
 		jBtnGroupDestroyer2 = new javax.swing.ButtonGroup();
 		jBtnGroupSubmarine = new javax.swing.ButtonGroup();
-		jBtnGroupPatrolBoat = new javax.swing.ButtonGroup();
+		jBtnGroupPatrolboat = new javax.swing.ButtonGroup();
 		jCbCarrierX = new javax.swing.JComboBox();
 		jLPatrolboat = new javax.swing.JLabel();
 		jLSubmarine = new javax.swing.JLabel();
@@ -52,19 +51,19 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jRBtnDestroyer190 = new javax.swing.JRadioButton();
 		jRBtnDestroyer10 = new javax.swing.JRadioButton();
 		jRBtnDestroyer1180 = new javax.swing.JRadioButton();
-		jRBtnDestroyer1361 = new javax.swing.JRadioButton();
-		jRBtnCarrier92 = new javax.swing.JRadioButton();
-		jRBtnCarrier362 = new javax.swing.JRadioButton();
-		jRBtnCarrier182 = new javax.swing.JRadioButton();
+		jRBtnDestroyer1270 = new javax.swing.JRadioButton();
+		jRBtnDestroyer290 = new javax.swing.JRadioButton();
+		jRBtnDestroyer2270 = new javax.swing.JRadioButton();
+		jRBtnDestroyer2180 = new javax.swing.JRadioButton();
 		jRBtnDestroyer20 = new javax.swing.JRadioButton();
-		jRBtnCarrier183 = new javax.swing.JRadioButton();
+		jRBtnSubmarine180 = new javax.swing.JRadioButton();
 		jRBtnSubmarine0 = new javax.swing.JRadioButton();
-		jRBtnCarrier363 = new javax.swing.JRadioButton();
-		jRBtnCarrier93 = new javax.swing.JRadioButton();
-		jRBtnCarrier184 = new javax.swing.JRadioButton();
+		jRBtnSubmarine270 = new javax.swing.JRadioButton();
+		jRBtnSubmarine90 = new javax.swing.JRadioButton();
+		jRBtnPatrolboat180 = new javax.swing.JRadioButton();
 		jRBtnPatrolboat0 = new javax.swing.JRadioButton();
-		jRBtnCarrier364 = new javax.swing.JRadioButton();
-		jRBtnCarrier94 = new javax.swing.JRadioButton();
+		jRBtnPatrolboat270 = new javax.swing.JRadioButton();
+		jRBtnPatrolboat90 = new javax.swing.JRadioButton();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 		setModal(true);
@@ -72,6 +71,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 
 		jCbCarrierX.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
 				"1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+		jCbCarrierX.setSelectedIndex(0);
 
 		jLPatrolboat.setText("PatrolBoat");
 
@@ -80,6 +80,8 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jCbPatrolboatY
 				.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
 						"A", "B", "C", "D", "E", "F", "G", "H", "I", "J" }));
+		jCbPatrolboatY.setSelectedIndex(4);
+
 		jCbPatrolboatY.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jCbPatrolboatYActionPerformed(evt);
@@ -95,10 +97,13 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jCbPatrolboatX.setModel(new javax.swing.DefaultComboBoxModel(
 				new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9",
 						"10" }));
+		jCbPatrolboatX.setSelectedIndex(0);
 
 		jCbDestroyer1Y
 				.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
 						"A", "B", "C", "D", "E", "F", "G", "H", "I", "J" }));
+		jCbDestroyer1Y.setSelectedIndex(1);
+
 		jCbDestroyer1Y.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jCbDestroyer1YActionPerformed(evt);
@@ -115,6 +120,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jCbDestroyer1X.setModel(new javax.swing.DefaultComboBoxModel(
 				new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9",
 						"10" }));
+		jCbDestroyer1X.setSelectedIndex(0);
 
 		jBtnGroupCarrier.add(jRBtnCarrier360);
 		jRBtnCarrier360.setText("270");
@@ -134,6 +140,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jCbDestroyer2Y
 				.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
 						"A", "B", "C", "D", "E", "F", "G", "H", "I", "J" }));
+		jCbDestroyer2Y.setSelectedIndex(2);
 		jCbDestroyer2Y.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jCbDestroyer2YActionPerformed(evt);
@@ -147,6 +154,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jCbDestroyer2X.setModel(new javax.swing.DefaultComboBoxModel(
 				new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9",
 						"10" }));
+		jCbDestroyer2X.setSelectedIndex(0);
 
 		jBtnGroupCarrier.add(jRBtnCarrier90);
 		jRBtnCarrier90.setText("90");
@@ -158,6 +166,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 
 		jCbCarrierY.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
 				"A", "B", "C", "D", "E", "F", "G", "H", "I", "J" }));
+		jCbCarrierY.setSelectedIndex(0);
 		jCbCarrierY.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jCbCarrierYActionPerformed(evt);
@@ -167,6 +176,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jCbSubmarineY
 				.setModel(new javax.swing.DefaultComboBoxModel(new String[] {
 						"A", "B", "C", "D", "E", "F", "G", "H", "I", "J" }));
+		jCbSubmarineY.setSelectedIndex(3);
 		jCbSubmarineY.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jCbSubmarineYActionPerformed(evt);
@@ -176,6 +186,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jCbSubmarineX.setModel(new javax.swing.DefaultComboBoxModel(
 				new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9",
 						"10" }));
+		jCbSubmarineX.setSelectedIndex(0);
 
 		jBtnGroupDestroyer1.add(jRBtnDestroyer190);
 		jRBtnDestroyer190.setText("90");
@@ -187,80 +198,83 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		jBtnGroupDestroyer1.add(jRBtnDestroyer1180);
 		jRBtnDestroyer1180.setText("180");
 
-		jBtnGroupDestroyer1.add(jRBtnDestroyer1361);
-		jRBtnDestroyer1361.setText("270");
-		jRBtnDestroyer1361
+		jBtnGroupDestroyer1.add(jRBtnDestroyer1270);
+		jRBtnDestroyer1270.setText("270");
+		jRBtnDestroyer1270
 				.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-		jRBtnDestroyer1361
+		jRBtnDestroyer1270
 				.addActionListener(new java.awt.event.ActionListener() {
 					public void actionPerformed(java.awt.event.ActionEvent evt) {
 						jRBtnDestroyer1361ActionPerformed(evt);
 					}
 				});
 
-		jBtnGroupDestroyer2.add(jRBtnCarrier92);
-		jRBtnCarrier92.setText("90");
+		jBtnGroupDestroyer2.add(jRBtnDestroyer290);
+		jRBtnDestroyer290.setText("90");
 
-		jBtnGroupDestroyer2.add(jRBtnCarrier362);
-		jRBtnCarrier362.setText("270");
-		jRBtnCarrier362
+		jBtnGroupDestroyer2.add(jRBtnDestroyer2270);
+		jRBtnDestroyer2270.setText("270");
+		jRBtnDestroyer2270
 				.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-		jRBtnCarrier362.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jRBtnCarrier362ActionPerformed(evt);
-			}
-		});
+		jRBtnDestroyer2270
+				.addActionListener(new java.awt.event.ActionListener() {
+					public void actionPerformed(java.awt.event.ActionEvent evt) {
+						jRBtnCarrier362ActionPerformed(evt);
+					}
+				});
 
-		jBtnGroupDestroyer2.add(jRBtnCarrier182);
-		jRBtnCarrier182.setText("180");
+		jBtnGroupDestroyer2.add(jRBtnDestroyer2180);
+		jRBtnDestroyer2180.setText("180");
 
 		jBtnGroupDestroyer2.add(jRBtnDestroyer20);
 		jRBtnDestroyer20.setText("0");
 		jRBtnDestroyer20.setSelected(true);
 
-		jBtnGroupSubmarine.add(jRBtnCarrier183);
-		jRBtnCarrier183.setText("180");
-		jRBtnCarrier183.setContentAreaFilled(false);
+		jBtnGroupSubmarine.add(jRBtnSubmarine180);
+		jRBtnSubmarine180.setText("180");
+		jRBtnSubmarine180.setContentAreaFilled(false);
 
 		jBtnGroupSubmarine.add(jRBtnSubmarine0);
 		jRBtnSubmarine0.setText("0");
 		jRBtnSubmarine0.setContentAreaFilled(false);
 		jRBtnSubmarine0.setSelected(true);
 
-		jBtnGroupSubmarine.add(jRBtnCarrier363);
-		jRBtnCarrier363.setText("270");
-		jRBtnCarrier363.setContentAreaFilled(false);
-		jRBtnCarrier363
+		jBtnGroupSubmarine.add(jRBtnSubmarine270);
+		jRBtnSubmarine270.setText("270");
+		jRBtnSubmarine270.setContentAreaFilled(false);
+		jRBtnSubmarine270
 				.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-		jRBtnCarrier363.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jRBtnCarrier363ActionPerformed(evt);
-			}
-		});
+		jRBtnSubmarine270
+				.addActionListener(new java.awt.event.ActionListener() {
+					public void actionPerformed(java.awt.event.ActionEvent evt) {
+						jRBtnCarrier363ActionPerformed(evt);
+					}
+				});
 
-		jBtnGroupSubmarine.add(jRBtnCarrier93);
-		jRBtnCarrier93.setText("90");
-		jRBtnCarrier93.setContentAreaFilled(false);
+		jBtnGroupSubmarine.add(jRBtnSubmarine90);
+		jRBtnSubmarine90.setText("90");
+		jRBtnSubmarine90.setContentAreaFilled(false);
 
-		jBtnGroupPatrolBoat.add(jRBtnCarrier184);
-		jRBtnCarrier184.setText("180");
+		jBtnGroupPatrolboat.add(jRBtnPatrolboat180);
+		jRBtnPatrolboat180.setText("180");
 
-		jBtnGroupPatrolBoat.add(jRBtnPatrolboat0);
+		jBtnGroupPatrolboat.add(jRBtnPatrolboat0);
 		jRBtnPatrolboat0.setText("0");
 		jRBtnPatrolboat0.setSelected(true);
 
-		jBtnGroupPatrolBoat.add(jRBtnCarrier364);
-		jRBtnCarrier364.setText("270");
-		jRBtnCarrier364
+		jBtnGroupPatrolboat.add(jRBtnPatrolboat270);
+		jRBtnPatrolboat270.setText("270");
+		jRBtnPatrolboat270
 				.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-		jRBtnCarrier364.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jRBtnCarrier364ActionPerformed(evt);
-			}
-		});
+		jRBtnPatrolboat270
+				.addActionListener(new java.awt.event.ActionListener() {
+					public void actionPerformed(java.awt.event.ActionEvent evt) {
+						jRBtnCarrier364ActionPerformed(evt);
+					}
+				});
 
-		jBtnGroupPatrolBoat.add(jRBtnCarrier94);
-		jRBtnCarrier94.setText("90");
+		jBtnGroupPatrolboat.add(jRBtnPatrolboat90);
+		jRBtnPatrolboat90.setText("90");
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
 				getContentPane());
@@ -300,16 +314,16 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 																		javax.swing.GroupLayout.DEFAULT_SIZE,
 																		Short.MAX_VALUE)
 																.addComponent(
-																		jRBtnCarrier182)
+																		jRBtnDestroyer2180)
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addGroup(
 																		layout.createParallelGroup(
 																				javax.swing.GroupLayout.Alignment.LEADING)
 																				.addComponent(
-																						jRBtnCarrier92)
+																						jRBtnDestroyer290)
 																				.addComponent(
-																						jRBtnCarrier362)
+																						jRBtnDestroyer2270)
 																				.addGroup(
 																						layout.createSequentialGroup()
 																								.addGap(70,
@@ -344,7 +358,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 																		javax.swing.GroupLayout.DEFAULT_SIZE,
 																		Short.MAX_VALUE)
 																.addComponent(
-																		jRBtnCarrier184)
+																		jRBtnPatrolboat180)
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addGroup(
@@ -358,9 +372,9 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 																								.addComponent(
 																										jRBtnPatrolboat0))
 																				.addComponent(
-																						jRBtnCarrier364)
+																						jRBtnPatrolboat270)
 																				.addComponent(
-																						jRBtnCarrier94)))
+																						jRBtnPatrolboat90)))
 												.addGroup(
 														javax.swing.GroupLayout.Alignment.TRAILING,
 														layout.createSequentialGroup()
@@ -388,16 +402,16 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 																		javax.swing.GroupLayout.DEFAULT_SIZE,
 																		Short.MAX_VALUE)
 																.addComponent(
-																		jRBtnCarrier183)
+																		jRBtnSubmarine180)
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addGroup(
 																		layout.createParallelGroup(
 																				javax.swing.GroupLayout.Alignment.LEADING)
 																				.addComponent(
-																						jRBtnCarrier363)
+																						jRBtnSubmarine270)
 																				.addComponent(
-																						jRBtnCarrier93)
+																						jRBtnSubmarine90)
 																				.addGroup(
 																						layout.createSequentialGroup()
 																								.addGap(70,
@@ -449,7 +463,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 																												.addComponent(
 																														jRBtnDestroyer190)
 																												.addComponent(
-																														jRBtnDestroyer1361)
+																														jRBtnDestroyer1270)
 																												.addGroup(
 																														layout.createSequentialGroup()
 																																.addGap(70,
@@ -566,7 +580,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 												.addGroup(
 														layout.createSequentialGroup()
 																.addComponent(
-																		jRBtnDestroyer1361)
+																		jRBtnDestroyer1270)
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addGroup(
@@ -606,20 +620,20 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 												.addGroup(
 														layout.createSequentialGroup()
 																.addComponent(
-																		jRBtnCarrier362)
+																		jRBtnDestroyer2270)
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addGroup(
 																		layout.createParallelGroup(
 																				javax.swing.GroupLayout.Alignment.BASELINE)
 																				.addComponent(
-																						jRBtnCarrier182)
+																						jRBtnDestroyer2180)
 																				.addComponent(
 																						jRBtnDestroyer20))
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addComponent(
-																		jRBtnCarrier92)))
+																		jRBtnDestroyer290)))
 								.addGap(21, 21, 21)
 								.addGroup(
 										layout.createParallelGroup(
@@ -646,20 +660,20 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 												.addGroup(
 														layout.createSequentialGroup()
 																.addComponent(
-																		jRBtnCarrier363)
+																		jRBtnSubmarine270)
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addGroup(
 																		layout.createParallelGroup(
 																				javax.swing.GroupLayout.Alignment.BASELINE)
 																				.addComponent(
-																						jRBtnCarrier183)
+																						jRBtnSubmarine180)
 																				.addComponent(
 																						jRBtnSubmarine0))
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addComponent(
-																		jRBtnCarrier93)))
+																		jRBtnSubmarine90)))
 								.addGap(11, 11, 11)
 								.addGroup(
 										layout.createParallelGroup(
@@ -686,35 +700,38 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 												.addGroup(
 														layout.createSequentialGroup()
 																.addComponent(
-																		jRBtnCarrier364)
+																		jRBtnPatrolboat270)
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addGroup(
 																		layout.createParallelGroup(
 																				javax.swing.GroupLayout.Alignment.BASELINE)
 																				.addComponent(
-																						jRBtnCarrier184)
+																						jRBtnPatrolboat180)
 																				.addComponent(
 																						jRBtnPatrolboat0))
 																.addPreferredGap(
 																		javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 																.addComponent(
-																		jRBtnCarrier94)))
+																		jRBtnPatrolboat90)))
 								.addGap(17, 17, 17).addComponent(jBtnSetFleet)
 								.addContainerGap()));
-
 		pack();
+		
+		jBtnSetFleet.requestFocus(); 
+		
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void jCbPatrolboatYActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jCbPatrolboatYActionPerformed
-		// 
+		//
 	}// GEN-LAST:event_jCbPatrolboatYActionPerformed
 
 	private void jCbDestroyer1YActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jCbDestroyer1YActionPerformed
 	}// GEN-LAST:event_jCbDestroyer1YActionPerformed
 
 	private void jBtnSetFleetActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBtnSetFleetActionPerformed
-		defineShipSetDirection(); //Berechnet die Positionen der Schiffe anhand der Eingaben
+		defineShipSetDirection(); // Berechnet die Positionen der Schiffe anhand
+									// der Eingaben
 		setVisible(false); // schließt Dialog
 		dispose();
 	}
@@ -735,13 +752,16 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 	private void jRBtnDestroyer1361ActionPerformed(
 			java.awt.event.ActionEvent evt) {
 	}
+
 	private void jRBtnCarrier362ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jRBtnCarrier362ActionPerformed
 	}
+
 	private void jRBtnCarrier363ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jRBtnCarrier363ActionPerformed
 	}
+
 	private void jRBtnCarrier364ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jRBtnCarrier364ActionPerformed
 	}
-	
+
 	public Ship[] showDialog() {
 		setVisible(true);
 		return fleet;
@@ -763,38 +783,56 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		Location[] shipsStartPositions = new Location[5];
 
 		// Liest aus der GUI für jedes Schiff die festgelegte Startposition
-		shipsStartPositions[0] = new Location(jCbCarrierX.getSelectedIndex(),jCbCarrierY.getSelectedIndex());
-		shipsStartPositions[1] = new Location(jCbDestroyer1X.getSelectedIndex(),jCbDestroyer1Y.getSelectedIndex());
-		shipsStartPositions[2] = new Location(jCbDestroyer2X.getSelectedIndex(),jCbDestroyer2Y.getSelectedIndex());
-		shipsStartPositions[3] = new Location(jCbSubmarineX.getSelectedIndex(),jCbSubmarineY.getSelectedIndex());
-		shipsStartPositions[4] = new Location(jCbPatrolboatX.getSelectedIndex(),jCbPatrolboatY.getSelectedIndex());
+		shipsStartPositions[0] = new Location(jCbCarrierX.getSelectedIndex(),
+				jCbCarrierY.getSelectedIndex());
+		shipsStartPositions[1] = new Location(
+				jCbDestroyer1X.getSelectedIndex(),
+				jCbDestroyer1Y.getSelectedIndex());
+		shipsStartPositions[2] = new Location(
+				jCbDestroyer2X.getSelectedIndex(),
+				jCbDestroyer2Y.getSelectedIndex());
+		shipsStartPositions[3] = new Location(jCbSubmarineX.getSelectedIndex(),
+				jCbSubmarineY.getSelectedIndex());
+		shipsStartPositions[4] = new Location(
+				jCbPatrolboatX.getSelectedIndex(),
+				jCbPatrolboatY.getSelectedIndex());
 
 		// Liest für jedes Schiff den in der GUI festgelegten Winkel
 		selectedCarrierAngle = getSelectedJRadioBtn(jBtnGroupCarrier);
 		selectedDestroyer1Angle = getSelectedJRadioBtn(jBtnGroupDestroyer1);
 		selectedDestroyer2Angle = getSelectedJRadioBtn(jBtnGroupDestroyer2);
 		selectedSubmarineAngle = getSelectedJRadioBtn(jBtnGroupSubmarine);
-		selectedPatrolboatAngle = getSelectedJRadioBtn(jBtnGroupPatrolBoat);
+		selectedPatrolboatAngle = getSelectedJRadioBtn(jBtnGroupPatrolboat);
 
 		// Generiert für jeden Schiffstyp die je nach Startposition und Winkel
 		// zugehörigen Koordinaten auf dem Spielfeld
-		carrierPositions = getAllShipPositions(shipsStartPositions[0],selectedCarrierAngle, 5);
-		destroyer1Positions = getAllShipPositions(shipsStartPositions[1],selectedDestroyer1Angle, 4);
-		destroyer2Positions = getAllShipPositions(shipsStartPositions[2],selectedDestroyer2Angle, 4);
-		submarinePositions = getAllShipPositions(shipsStartPositions[3],selectedSubmarineAngle, 3);
-		patrolboatPositions = getAllShipPositions(shipsStartPositions[4],selectedPatrolboatAngle, 2);
+		carrierPositions = getAllShipPositions(shipsStartPositions[0],
+				selectedCarrierAngle, 5);
+		destroyer1Positions = getAllShipPositions(shipsStartPositions[1],
+				selectedDestroyer1Angle, 4);
+		destroyer2Positions = getAllShipPositions(shipsStartPositions[2],
+				selectedDestroyer2Angle, 4);
+		submarinePositions = getAllShipPositions(shipsStartPositions[3],
+				selectedSubmarineAngle, 3);
+		patrolboatPositions = getAllShipPositions(shipsStartPositions[4],
+				selectedPatrolboatAngle, 2);
 
 		// TODO zu Ints ummünzen
-		//TODO Überprüfung, dass Schiffe nicht auf den selben Feldern stehen 
-		fleet[0] = new Carrier(Integer.parseInt(selectedCarrierAngle), 5,carrierPositions);
-		fleet[1] = new Destroyer(Integer.parseInt(selectedDestroyer1Angle), 4,destroyer1Positions);
-		fleet[2] = new Destroyer(Integer.parseInt(selectedDestroyer2Angle), 4,destroyer2Positions);
-		fleet[3] = new Submarine(Integer.parseInt(selectedSubmarineAngle), 3,submarinePositions);
-		fleet[4] = new Patrolboat(Integer.parseInt(selectedPatrolboatAngle), 2,patrolboatPositions);
+		// TODO Überprüfung, dass Schiffe nicht auf den selben Feldern stehen
+		fleet[0] = new Carrier(Integer.parseInt(selectedCarrierAngle), 5,
+				carrierPositions);
+		fleet[1] = new Destroyer(Integer.parseInt(selectedDestroyer1Angle), 4,
+				destroyer1Positions);
+		fleet[2] = new Destroyer(Integer.parseInt(selectedDestroyer2Angle), 4,
+				destroyer2Positions);
+		fleet[3] = new Submarine(Integer.parseInt(selectedSubmarineAngle), 3,
+				submarinePositions);
+		fleet[4] = new Patrolboat(Integer.parseInt(selectedPatrolboatAngle), 2,
+				patrolboatPositions);
 
 	}
-	
-	//TODO diese Funktion verstehen
+
+	// TODO diese Funktion verstehen
 	private String getSelectedJRadioBtn(ButtonGroup buttonGroup) {
 
 		for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons
@@ -810,30 +848,50 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 
 	}
 
-	private Location[] getAllShipPositions(Location startPosition, String angle, int shipLength) {
+	private Location[] getAllShipPositions(Location startPosition,
+			String angle, int shipLength) {
 		// TODO 360 er Buttons in 270er umbennen ...
-		Location[] shipLocations = new Location[shipLength]; 	//Erstellt ein Array aus Locations(x und y-Werte auf dem Spielfeld) je nach Schiffsgröße
+		Location[] shipLocations = new Location[shipLength]; // Erstellt ein
+																// Array aus
+																// Locations(x
+																// und y-Werte
+																// auf dem
+																// Spielfeld) je
+																// nach
+																// Schiffsgröße
 
-		shipLength--; 												//Verringert die Schiffslänge um 1 damit nicht außerhalb des Arrays versucht wird zu schreiben
-		shipLocations[shipLength] = startPosition;						//Speichert die Startposition des Schiffes an letzter Stelle des Arrays
-		shipLength--;												
+		shipLength--; // Verringert die Schiffslänge um 1 damit nicht außerhalb
+						// des Arrays versucht wird zu schreiben
+		shipLocations[shipLength] = startPosition; // Speichert die
+													// Startposition des
+													// Schiffes an letzter
+													// Stelle des Arrays
+		shipLength--;
 
 		while (shipLength >= 0) {
 			// TODO oberstes linkes Spielfeld = x 0 y= 0? Wenn nein den index+1
 			switch (angle) { //
 			case "0":
-				shipLocations[shipLength] = new Location(shipLocations[shipLength + 1].getX(),shipLocations[shipLength + 1].getY() + 1);
+				shipLocations[shipLength] = new Location(
+						shipLocations[shipLength + 1].getX(),
+						shipLocations[shipLength + 1].getY() + 1);
 				break;
 			case "90":
-				shipLocations[shipLength] = new Location(shipLocations[shipLength + 1].getX() + 1,shipLocations[shipLength + 1].getY());
+				shipLocations[shipLength] = new Location(
+						shipLocations[shipLength + 1].getX() + 1,
+						shipLocations[shipLength + 1].getY());
 				break;
 			case "180":
-				shipLocations[shipLength] = new Location(shipLocations[shipLength + 1].getX() + 2,shipLocations[shipLength + 1].getY() + 1);
+				shipLocations[shipLength] = new Location(
+						shipLocations[shipLength + 1].getX() + 2,
+						shipLocations[shipLength + 1].getY() + 1);
 				break;
 			case "270":
-				shipLocations[shipLength] = new Location(shipLocations[shipLength + 1].getX() + 1,shipLocations[shipLength + 1].getY() + 2);
+				shipLocations[shipLength] = new Location(
+						shipLocations[shipLength + 1].getX() + 1,
+						shipLocations[shipLength + 1].getY() + 2);
 				break;
-				//TODO Fokus setzen für Default
+			// TODO Fokus setzen für Default
 			}
 			shipLength--;
 		}
@@ -844,7 +902,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 	private javax.swing.ButtonGroup jBtnGroupCarrier;
 	private javax.swing.ButtonGroup jBtnGroupDestroyer1;
 	private javax.swing.ButtonGroup jBtnGroupDestroyer2;
-	private javax.swing.ButtonGroup jBtnGroupPatrolBoat;
+	private javax.swing.ButtonGroup jBtnGroupPatrolboat;
 	private javax.swing.ButtonGroup jBtnGroupSubmarine;
 	private javax.swing.JButton jBtnSetFleet;
 	private javax.swing.JComboBox jCbCarrierX;
@@ -865,22 +923,22 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 	private javax.swing.JLabel jLabel2;
 	private javax.swing.JRadioButton jRBtnCarrier0;
 	private javax.swing.JRadioButton jRBtnCarrier180;
-	private javax.swing.JRadioButton jRBtnCarrier182;
-	private javax.swing.JRadioButton jRBtnCarrier183;
-	private javax.swing.JRadioButton jRBtnCarrier184;
+	private javax.swing.JRadioButton jRBtnDestroyer2180;
+	private javax.swing.JRadioButton jRBtnSubmarine180;
+	private javax.swing.JRadioButton jRBtnPatrolboat180;
 	private javax.swing.JRadioButton jRBtnDestroyer20;
 	private javax.swing.JRadioButton jRBtnSubmarine0;
 	private javax.swing.JRadioButton jRBtnCarrier360;
-	private javax.swing.JRadioButton jRBtnCarrier362;
-	private javax.swing.JRadioButton jRBtnCarrier363;
-	private javax.swing.JRadioButton jRBtnCarrier364;
+	private javax.swing.JRadioButton jRBtnDestroyer2270;
+	private javax.swing.JRadioButton jRBtnSubmarine270;
+	private javax.swing.JRadioButton jRBtnPatrolboat270;
 	private javax.swing.JRadioButton jRBtnPatrolboat0;
 	private javax.swing.JRadioButton jRBtnCarrier90;
-	private javax.swing.JRadioButton jRBtnCarrier92;
-	private javax.swing.JRadioButton jRBtnCarrier93;
-	private javax.swing.JRadioButton jRBtnCarrier94;
+	private javax.swing.JRadioButton jRBtnDestroyer290;
+	private javax.swing.JRadioButton jRBtnSubmarine90;
+	private javax.swing.JRadioButton jRBtnPatrolboat90;
 	private javax.swing.JRadioButton jRBtnDestroyer10;
 	private javax.swing.JRadioButton jRBtnDestroyer1180;
-	private javax.swing.JRadioButton jRBtnDestroyer1361;
+	private javax.swing.JRadioButton jRBtnDestroyer1270;
 	private javax.swing.JRadioButton jRBtnDestroyer190;
 }
