@@ -717,9 +717,9 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 								.addGap(17, 17, 17).addComponent(jBtnSetFleet)
 								.addContainerGap()));
 		pack();
-		
-		jBtnSetFleet.requestFocus(); 
-		
+
+		jBtnSetFleet.requestFocus();
+
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void jCbPatrolboatYActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jCbPatrolboatYActionPerformed
@@ -732,6 +732,8 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 	private void jBtnSetFleetActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBtnSetFleetActionPerformed
 		defineShipSetDirection(); // Berechnet die Positionen der Schiffe anhand
 									// der Eingaben
+
+		System.out.println(checkCrossedPositions());
 		setVisible(false); // schließt Dialog
 		dispose();
 	}
@@ -851,11 +853,11 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 	private Location[] getAllShipPositions(Location startPosition,
 			String angle, int shipLength) {
 		// TODO 360 er Buttons in 270er umbennen ...
-		Location[] shipLocations = new Location[shipLength]; // Erstellt ein
-																// Array aus
+		Location[] shipLocations = new Location[shipLength]; // Erstellt ein //
+																// Array aus //
 																// Locations(x
 																// und y-Werte
-																// auf dem
+																// // auf dem //
 																// Spielfeld) je
 																// nach
 																// Schiffsgröße
@@ -896,6 +898,34 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 			shipLength--;
 		}
 		return shipLocations;
+	}
+
+	private Boolean checkCrossedPositions() {
+
+		Boolean crossedPosition = false;
+
+		for (Ship firstShip : fleet) {
+			for (Ship nextShip : fleet) {
+				if (firstShip.equals(nextShip)) {
+
+				} else {
+					for (Location firstShipPosition : firstShip
+							.getShipPositions()) {
+						for (Location secondShipPosition : nextShip
+								.getShipPositions()) {
+							if (firstShipPosition.equals(secondShipPosition)) {
+								crossedPosition = true;
+								return crossedPosition;
+							} else {
+								crossedPosition = false;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		return crossedPosition;
 	}
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables

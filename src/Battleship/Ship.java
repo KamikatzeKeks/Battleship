@@ -52,4 +52,8 @@ public abstract class Ship extends Actor {
 		}
 
 	}
+	
+	public Location[] getShipPositions(){
+		 return hitPoints;
+	}
 }
