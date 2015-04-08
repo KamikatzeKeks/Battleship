@@ -117,6 +117,7 @@ public class Battleship extends JFrame {
 		
 		if (player1Turn == true) {				//Wählt wer an der Reihe ist
 			
+			GGBackground bg = jGameGridPlayer2.getBg(); // 
 			player1Turn = false;
 			ListIterator<Location> i = player1Shots.listIterator(); // erstellt ein Iterable Object von player1Shots
 			
@@ -133,10 +134,22 @@ public class Battleship extends JFrame {
 				player1Shots.add(playerShot);
 				for (Ship ship : fleetPlayer1) 
 				{
-					if (ship.isDestroyed(playerShot) == true) 
+					int isHitOrDestroyed = ship.isHit(playerShot);
+					if ( isHitOrDestroyed == 1) 
+					{
+						bg.fillCell(playerShot, Color.red);
+						break;
+					}
+					else if(isHitOrDestroyed == 2)
 					{
 						player1FleetDestroyed++;
-					}						
+						bg.fillCell(playerShot, Color.red);
+						break;
+					}
+					else
+					{
+						bg.fillCell(playerShot, Color.yellow);
+					}
 				}	
 			}
 			else
@@ -157,22 +170,28 @@ public class Battleship extends JFrame {
 				// War dein Code. Weis noch net genau was der macht und ob der funktioniert. 
 				for (Ship ship : fleetPlayer1) 
 				{
-					if (ship.isDestroyed(playerShot) == true) 
+					int isHitOrDestroyed = ship.isHit(playerShot);
+					if ( isHitOrDestroyed == 1) 
+					{
+						bg.fillCell(playerShot, Color.red);
+						break;
+					}
+					else if(isHitOrDestroyed == 2)
 					{
 						player1FleetDestroyed++;
-						
-					}						
+						bg.fillCell(playerShot, Color.red);
+						break;
+					}
+					else
+					{
+						bg.fillCell(playerShot, Color.yellow);
+					}					
 				}
 			}
-			
-			//Färbt das abgeschossene Feld Rot
-			//TODO Muss noch angepasst werden. Bei Treffer rot und sonst grün.
-			GGBackground bg = jGameGridPlayer2.getBg(); 
-			bg.fillCell(playerShot, Color.red);
-			
 		} 
 		else 
 		{
+			GGBackground bg = jGameGridPlayer1.getBg();
 			player1Turn = true;
 			
 			ListIterator<Location> i = player2Shots.listIterator();
@@ -182,10 +201,22 @@ public class Battleship extends JFrame {
 				player2Shots.add(playerShot);
 				for (Ship ship : fleetPlayer2) 
 				{
-					if (ship.isDestroyed(playerShot) == true) 
+					int isHitOrDestroyed = ship.isHit(playerShot);
+					if ( isHitOrDestroyed == 1) 
+					{
+						bg.fillCell(playerShot, Color.red);
+						break;
+					}
+					else if(isHitOrDestroyed == 2)
 					{
 						player2FleetDestroyed++;
-					}						
+						bg.fillCell(playerShot, Color.red);
+						break;
+					}
+					else
+					{
+						bg.fillCell(playerShot, Color.yellow);
+					}					
 				}	
 			}
 			else
@@ -203,18 +234,27 @@ public class Battleship extends JFrame {
 				}
 				player2Shots.add(playerShot);
 					
-					/*for (Ship ship : fleetPlayer2) 
+					for (Ship ship : fleetPlayer2) 
 					{
-						if (ship.isDestroyed(playerShot) == true) 
+						int isHitOrDestroyed = ship.isHit(playerShot);
+						if ( isHitOrDestroyed == 1) 
+						{
+							bg.fillCell(playerShot, Color.red);
+							break;
+						}
+						else if(isHitOrDestroyed == 2)
 						{
 							player2FleetDestroyed++;
+							bg.fillCell(playerShot, Color.red);
+							break;
+						}
+						else
+						{
+							bg.fillCell(playerShot, Color.yellow);
 						}						
-					}*/
+					}
 				
 			}
-			
-			GGBackground bg = jGameGridPlayer1.getBg();
-			bg.fillCell(playerShot, Color.red);
 			
 		}
 
