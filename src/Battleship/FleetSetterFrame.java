@@ -732,11 +732,25 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 	private void jBtnSetFleetActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBtnSetFleetActionPerformed
 		defineShipSetDirection(); // Berechnet die Positionen der Schiffe anhand
 									// der Eingaben
+		if(crossedShipPosition()==true){
+			
+			JOptionPane.showMessageDialog(null, "Schiffe kreuzen sich");
+			
+		}else if(fleetOutOfGameGrid() ==  true) {
+			
+			JOptionPane.showMessageDialog(null, "Schiff außerhalb des Spielfeldes");
 
-		System.out.println("Crossed:  " + crossedShipPosition());
-		System.out.println("outOfBorder: " +fleetOutOfGameGrid());
-		setVisible(false); // schließt Dialog
-		dispose();
+			
+		}else {
+			
+			System.out.println("Crossed:  " + crossedShipPosition());
+			System.out.println("outOfBorder: " +fleetOutOfGameGrid());
+			setVisible(false); // schließt Dialog
+			dispose();
+			
+			
+		}
+		
 	}
 
 	private void jRBtnCarrier360ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jRBtnCarrier360ActionPerformed
@@ -872,7 +886,6 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		shipLength--;
 
 		while (shipLength >= 0) {
-			// TODO oberstes linkes Spielfeld = x 0 y= 0? Wenn nein den index+1
 			switch (angle) { //
 			case "0":
 				shipLocations[shipLength] = new Location(
@@ -894,7 +907,6 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 						shipLocations[shipLength + 1].getX() ,
 						shipLocations[shipLength + 1].getY() - 1);
 				break;
-			// TODO Fokus setzen für Default
 			}
 			shipLength--;
 		}
