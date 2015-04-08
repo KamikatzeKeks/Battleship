@@ -11,13 +11,9 @@ import java.util.ListIterator;
 
 public class Battleship extends JFrame {
 
-	// TODO Fehler beheben bei dem es Möglich ist ein Schiff e mit
-	// permanenten feuern auf einen Punkt(der trifft) zu zerstören
-	// TODO Anzeigen wo schon hingeschossen wurde
-	// TODO Anzeigen ob getroffen wurde
-	// TODO Schiffe werden vertikal berechnet bei 0° aber horizontal angezeigt
-	//TODO Schiffe dürfen nicht außerhalb des Spielfeldes platziert werden
-	//TODO Es dürfen keine Schiffe auf den selben Feldern platziert werden
+	// TODO Sprites anpassen
+	// TODO AM Anfang den Start Buttun verstecken bis die Flotten platziert wurden.
+	// TODO Wenn ein Spieler gewinnt muss das Spiel beendet werden und gefragt ob man noch ein Spiel spielen will.
 
 	GameGrid jGameGridPlayer1 = new GameGrid(10, 10, 60, Color.green,
 			"sprites/background.png");
@@ -35,7 +31,7 @@ public class Battleship extends JFrame {
 	ArrayList<Location> player2Shots = new ArrayList<Location>();
 	int player1FleetDestroyed = 0;
 	int player2FleetDestroyed = 0;
-	boolean player1Turn = true; // TODO umbennen in Usershot
+	boolean player1Turn = true; 
 
 	public Battleship() {
 		// Sets values of Mainframe
