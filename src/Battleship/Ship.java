@@ -25,7 +25,6 @@ public abstract class Ship extends Actor {
 		{
 			if (hitPoint.equals(userShot)) 
 			{
-				System.out.println("hit");
 				size--;
 				if(size == 0)
 				{
