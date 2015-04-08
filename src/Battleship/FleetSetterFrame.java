@@ -733,7 +733,8 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		defineShipSetDirection(); // Berechnet die Positionen der Schiffe anhand
 									// der Eingaben
 
-		System.out.println(checkCrossedPositions());
+		System.out.println("Crossed:  " + crossedShipPosition());
+		System.out.println("outOfBorder: " +fleetOutOfGameGrid());
 		setVisible(false); // schließt Dialog
 		dispose();
 	}
@@ -875,23 +876,23 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 			switch (angle) { //
 			case "0":
 				shipLocations[shipLength] = new Location(
-						shipLocations[shipLength + 1].getX(),
-						shipLocations[shipLength + 1].getY() + 1);
+						shipLocations[shipLength + 1].getX()+1,
+						shipLocations[shipLength + 1].getY());
 				break;
 			case "90":
 				shipLocations[shipLength] = new Location(
-						shipLocations[shipLength + 1].getX() + 1,
-						shipLocations[shipLength + 1].getY());
+						shipLocations[shipLength + 1].getX(),
+						shipLocations[shipLength + 1].getY()+1);
 				break;
 			case "180":
 				shipLocations[shipLength] = new Location(
-						shipLocations[shipLength + 1].getX() + 2,
-						shipLocations[shipLength + 1].getY() + 1);
+						shipLocations[shipLength + 1].getX() - 1,
+						shipLocations[shipLength + 1].getY() );
 				break;
 			case "270":
 				shipLocations[shipLength] = new Location(
-						shipLocations[shipLength + 1].getX() + 1,
-						shipLocations[shipLength + 1].getY() + 2);
+						shipLocations[shipLength + 1].getX() ,
+						shipLocations[shipLength + 1].getY() - 1);
 				break;
 			// TODO Fokus setzen für Default
 			}
@@ -900,7 +901,26 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		return shipLocations;
 	}
 
-	private Boolean checkCrossedPositions() {
+	private Boolean fleetOutOfGameGrid() {
+
+		Boolean outOfGameGrid = false;
+
+		for (Ship ship : fleet) {
+			for (Location location : ship.getShipPositions()) {
+				if (location.getX() < 0 || location.getY() < 0) {
+					outOfGameGrid = true;
+					return outOfGameGrid;
+				} else {
+					outOfGameGrid = false;
+				}
+
+			}
+		}
+
+		return outOfGameGrid;
+	}
+
+	private Boolean crossedShipPosition() {
 
 		Boolean crossedPosition = false;
 
