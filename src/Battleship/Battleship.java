@@ -283,7 +283,6 @@ public class Battleship extends JFrame {
 	}
 
 	private void jBtnSetFleetPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO Schiffklassen ableiten (Carrier etc)
 				FleetSetterFrame player1 = new FleetSetterFrame(null, true); // Erstellt
 																				// modalen
 																				// jDialog
@@ -340,19 +339,24 @@ public class Battleship extends JFrame {
 
 	private void jBtnStartGameActionPerformed(java.awt.event.ActionEvent evt) {
 		
-		if(jBtnSetFleetPlayer1.isEnabled() == false && jBtnSetFleetPlayer2.isEnabled() == false){
+		if(jBtnSetFleetPlayer1.isEnabled() == false& jBtnSetFleetPlayer2.isEnabled() == false){
 		jBtnSetFleetPlayer1.setVisible(false);
 		jBtnSetFleetPlayer2.setVisible(false);
 		jBtnShoot.setVisible(true);
 		jBtnStartGame.setVisible(false);
-		}
-		
 		JOptionPane.showMessageDialog(null,"Player1's turn.");
 		
 		for (Ship ship : fleetPlayer1) 
 		{
 			ship.show();
 		}
+		
+		}else{
+			
+			JOptionPane.showMessageDialog(null,"Es wurden noch nicht alle Schiffe gesetzt");
+			
+		}
+	
 	}
 
 	private void jBtnShootActionPerformed(java.awt.event.ActionEvent evt) {
