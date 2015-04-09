@@ -1,6 +1,12 @@
 package Battleship;
 
+import java.awt.image.CropImageFilter;
+import java.io.ObjectInputStream.GetField;
 import java.util.Enumeration;
+
+
+
+
 
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
@@ -8,10 +14,32 @@ import javax.swing.JOptionPane;
 
 import ch.aplu.jgamegrid.Location;
 
+/**
+ * <pre>Die FleetSetterFrame ist ein modaler JDialog zur Eingabe der Startfelder des jeweiligen Schiffstypes, 
+ * sowie seines Verlaufs in einer Gradangabe 
+ * 
+ * <i>(0° = Verlauf rechts horizontal, 90° = Verlauf  unten vertikal, 180°=Verlauf links horizontal, 270°=Verlauf oben vertikal)</i>
+ * 
+ * Basierend auf dieser Eingabe werden für alle 5 Schiffstypen  (1xCarrier,2xDestroyer,1xSubmarine,1xPatrolboat) 
+ * die Felder berechnet und im jeweiligen Objekt gespeichert. 
+ * Die 5 Schiffstypen sind im Array fleet gespeichert.</pre>
+ * 
+ * @return Rückgabewert des Dialogs ist ein Array der Größe 5 aus Objekten der Klasse Schiff
+ * @author Brian Korduan
+ * 
+ *
+ */
+
 public class FleetSetterFrame extends javax.swing.JDialog {
+	
+
 
 	Ship[] fleet = new Ship[5];
 
+	/**
+	 * @param parent
+	 * @param modal
+	 */
 	public FleetSetterFrame(java.awt.Frame parent, boolean modal) {
 		super(parent, modal);
 		initComponents();
@@ -783,6 +811,12 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		setVisible(true);
 		return fleet;
 	}
+	
+	/**
+	 * Generiert 5 Schiffsobjekte mit ihren jeweiligen Positionen. Nach dem einlesen der Startpositionen und des Winkels aus der GUI wird die Methode
+	 * @see getAllShipPositions verwendet um alle Weiteren Location Objekte eines Schiffes zu erzeugen. 
+	 * Beispiel: Carrier auf A1 bei 0 ° (>)  daraus ergibt sich das Startfeld Location(0,0) und die weiteren Locations: Location(1,0), Location(2,0),Location(3,0),Location(4,0)
+	 */
 
 	public void defineShipSetDirection() {
 
@@ -864,10 +898,18 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		return null;
 
 	}
-
+/**Generiert weitere Felder eines Schifftyp basierend auf der Start Location und der Richtung in Grad 
+ * 0° >
+ * 90° v
+ * 180°<
+ * 270° >
+ * @param startPosition 
+ * @param angle
+ * @param shipLength
+ * @return Location[] Gibt ein Array aus Objekten der Klasse Location (X und Y-Wert auf dem Spielfeld) zurück, welche zu einem bestimmten Schiffstyp gehören
+ */
 	private Location[] getAllShipPositions(Location startPosition,
 			String angle, int shipLength) {
-		// TODO 360 er Buttons in 270er umbennen ...
 		Location[] shipLocations = new Location[shipLength]; // Erstellt ein //
 																// Array aus //
 																// Locations(x
@@ -913,6 +955,13 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		return shipLocations;
 	}
 
+	/**
+	 * Überprüft ob ein Schiff des Arrays fleet außerhalb des Spielfeldes ist
+	 * @param void
+	 * @return Boolean (true =  ein Schiff befindet sich außerhalb des Spielfeldes, false= Alle Schiffe befinden sich im Spielfeld)
+	 * @author Brian Korduan
+	 */
+	
 	private Boolean fleetOutOfGameGrid() {
 
 		Boolean outOfGameGrid = false;
@@ -932,16 +981,29 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		return outOfGameGrid;
 	}
 
-	private Boolean crossedShipPosition() {
+	/**
+	 * Überprüft ob Schiffe innerhalb des Arrays fleet die selbe Position haben und somit die Positionierung unzulässig ist
+	 * 
+	 * @param void
+	 * @return Boolean (true = Schiffe kreuzen sich, false = Schiffe kreuzen sich nicht)
+	 * @author Brian Korduan
+	 */
+	private Boolean crossedShipPosition() { 
 
 		Boolean crossedPosition = false;
 
 		for (Ship firstShip : fleet) {
 			for (Ship nextShip : fleet) {
-				if (firstShip.equals(nextShip)) {
+				if (firstShip.equals(nextShip)) { //Damit nicht Ein Carrier aus dem ersten Array mit dem Carrier aus dem 2. Array verglichen wird. Dies würde immer zu einem true führen
 
 				} else {
-					for (Location firstShipPosition : firstShip
+					
+					/*
+					 * Jede Position eines Schiffes wird mit jeder Position eines anderen Schiffes verglichen 
+					 * im Falle, dass zwei Positionen übereinstimmen wird true zurückgegeben für "Ja Schiffe kreuzen sich"
+					 */
+					
+					for (Location firstShipPosition : firstShip 
 							.getShipPositions()) {
 						for (Location secondShipPosition : nextShip
 								.getShipPositions()) {
