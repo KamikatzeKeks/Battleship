@@ -13,11 +13,6 @@ public class Battleship extends JFrame {
 
 	// TODO Fehler beheben bei dem es Möglich ist ein Schiff e mit
 	// permanenten feuern auf einen Punkt(der trifft) zu zerstören
-	// TODO Anzeigen wo schon hingeschossen wurde
-	// TODO Anzeigen ob getroffen wurde
-	// TODO Schiffe werden vertikal berechnet bei 0° aber horizontal angezeigt
-	//TODO Schiffe dürfen nicht außerhalb des Spielfeldes platziert werden
-	//TODO Es dürfen keine Schiffe auf den selben Feldern platziert werden
 
 	GameGrid jGameGridPlayer1 = new GameGrid(10, 10, 60, Color.green,
 			"sprites/background.png");
