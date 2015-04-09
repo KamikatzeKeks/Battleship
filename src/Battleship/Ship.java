@@ -7,7 +7,7 @@ import ch.aplu.jgamegrid.*;
 public abstract class Ship extends Actor {
 	private int angle;
 	private int size;
-	private Boolean isDestroyed = false;
+	private boolean isDestroyed = false;
 	Location[] hitPoints;
 
 	public Ship(int angle, int size, Location[] hitPoints,String shipType) {
@@ -17,24 +17,26 @@ public abstract class Ship extends Actor {
 		this.angle = angle;
 		this.size = size;
 	}
-
-	public Boolean isDestroyed(Location userShot) {
-		
-
-
-		for (Location hitPoint : hitPoints) {
-
-			if (hitPoint.equals(userShot)) {
+	
+	public int isHit(Location userShot)
+	{
+		int isHitOrDestroyed = 0; // 0=nicht getroffen, 1=getroffen, 2= getroffen und versenkt
+		for (Location hitPoint : hitPoints) 
+		{
+			if (hitPoint.equals(userShot)) 
+			{
 				size--;
-			}
-			if (size == 0) {
-				isDestroyed = true;
-			} else {
-				isDestroyed = false;
+				if(size == 0)
+				{
+					isHitOrDestroyed = 2;
+				}
+				else
+				{
+					isHitOrDestroyed = 1;
+				}
 			}
 		}
-		return isDestroyed;
-
+		return isHitOrDestroyed;
 	}
 	
 	public Location getStartLocation(){

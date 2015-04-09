@@ -11,8 +11,9 @@ import java.util.ListIterator;
 
 public class Battleship extends JFrame {
 
-	// TODO Fehler beheben bei dem es Möglich ist ein Schiff e mit
-	// permanenten feuern auf einen Punkt(der trifft) zu zerstören
+	// TODO Sprites anpassen
+	// TODO AM Anfang den Start Buttun verstecken bis die Flotten platziert wurden.
+	// TODO Wenn ein Spieler gewinnt muss das Spiel beendet werden und gefragt ob man noch ein Spiel spielen will.
 
 	GameGrid jGameGridPlayer1 = new GameGrid(10, 10, 60, Color.green,
 			"sprites/background.png");
@@ -30,7 +31,7 @@ public class Battleship extends JFrame {
 	ArrayList<Location> player2Shots = new ArrayList<Location>();
 	int player1FleetDestroyed = 0;
 	int player2FleetDestroyed = 0;
-	boolean player1Turn = true; // TODO umbennen in Usershot
+	boolean player1Turn = true; 
 
 	public Battleship() {
 		// Sets values of Mainframe
@@ -125,14 +126,7 @@ public class Battleship extends JFrame {
 			
 			if (!i.hasNext())    //Wenn der Array leer ist wird es mit der ersten Location gefüllt
 			{
-				player1Shots.add(playerShot);
-				for (Ship ship : fleetPlayer1) 
-				{
-					if (ship.isDestroyed(playerShot) == true) 
-					{
-						player1FleetDestroyed++;
-					}						
-				}	
+				ShotPlayer1(playerShot);
 			}
 			else
 			{
@@ -147,41 +141,20 @@ public class Battleship extends JFrame {
 						while(i.hasPrevious()){i.previous();} //rudert den Iterator zurück damit er wieder von Anfang überprüft wird falls wieder etwas falsches eingegeben wurde. 
 					}
 				}
-				player1Shots.add(playerShot);
+				ShotPlayer1(playerShot);
 				
-				// War dein Code. Weis noch net genau was der macht und ob der funktioniert. 
-				for (Ship ship : fleetPlayer1) 
-				{
-					if (ship.isDestroyed(playerShot) == true) 
-					{
-						player1FleetDestroyed++;
-						
-					}						
-				}
 			}
-			
-			//Färbt das abgeschossene Feld Rot
-			//TODO Muss noch angepasst werden. Bei Treffer rot und sonst grün.
-			GGBackground bg = jGameGridPlayer2.getBg(); 
-			bg.fillCell(playerShot, Color.red);
-			
 		} 
 		else 
 		{
+			GGBackground bg = jGameGridPlayer1.getBg();
 			player1Turn = true;
 			
 			ListIterator<Location> i = player2Shots.listIterator();
 			
 			if (!i.hasNext())
 			{
-				player2Shots.add(playerShot);
-				for (Ship ship : fleetPlayer2) 
-				{
-					if (ship.isDestroyed(playerShot) == true) 
-					{
-						player2FleetDestroyed++;
-					}						
-				}	
+				ShotPlayer2(playerShot);
 			}
 			else
 			{
@@ -196,20 +169,9 @@ public class Battleship extends JFrame {
 						while(i.hasPrevious()){i.previous();}
 					}
 				}
-				player2Shots.add(playerShot);
-					
-					/*for (Ship ship : fleetPlayer2) 
-					{
-						if (ship.isDestroyed(playerShot) == true) 
-						{
-							player2FleetDestroyed++;
-						}						
-					}*/
 				
+				ShotPlayer2(playerShot);
 			}
-			
-			GGBackground bg = jGameGridPlayer1.getBg();
-			bg.fillCell(playerShot, Color.red);
 			
 		}
 
@@ -254,6 +216,71 @@ public class Battleship extends JFrame {
 
 	}
 	
+	private void ShotPlayer1(Location playerShot)
+	{
+		GGBackground bg = jGameGridPlayer2.getBg(); //
+		player1Shots.add(playerShot);
+		for (Ship ship : fleetPlayer2) 
+		{
+			int isHitOrDestroyed = ship.isHit(playerShot);
+			if ( isHitOrDestroyed == 1) 
+			{
+				bg.fillCell(playerShot, Color.red);
+				break;
+			}
+			else if(isHitOrDestroyed == 2)
+			{
+				player2FleetDestroyed++;
+				bg.fillCell(playerShot, Color.red);
+				if (player2FleetDestroyed == 5)
+				{
+					JOptionPane.showMessageDialog(null, "Player 1 won!!");
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Ship destroyed.");
+				}
+				break;
+			}
+			else
+			{
+				bg.fillCell(playerShot, Color.yellow);
+			}					
+		}
+	}
+	
+	private void ShotPlayer2(Location playerShot)
+	{
+		GGBackground bg = jGameGridPlayer1.getBg(); //
+		player2Shots.add(playerShot);
+		for (Ship ship : fleetPlayer1) 
+		{
+			int isHitOrDestroyed = ship.isHit(playerShot);
+			if ( isHitOrDestroyed == 1) 
+			{
+				bg.fillCell(playerShot, Color.red);
+				break;
+			}
+			else if(isHitOrDestroyed == 2)
+			{
+				player1FleetDestroyed++;
+				bg.fillCell(playerShot, Color.red);
+				if (player1FleetDestroyed == 5)
+				{
+					JOptionPane.showMessageDialog(null, "Player 2 won!!");
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Ship destroyed.");
+				}
+				break;
+			}
+			else
+			{
+				bg.fillCell(playerShot, Color.yellow);
+			}					
+		}
+	}
 
 	private void jBtnSetFleetPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO Schiffklassen ableiten (Carrier etc)
