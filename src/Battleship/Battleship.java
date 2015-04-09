@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.ListIterator;
 
 public class Battleship extends JFrame {
-
-	// TODO Sprites anpassen
-	// TODO AM Anfang den Start Buttun verstecken bis die Flotten platziert wurden.
+	
+	//TODO Kommentare hinzufügen 
+	//TODO Überprüfen ob in der FleetSetterFrame nach einer Fehlerhaften eingabe nicht mehr als 5 * x Locations erzeugt werden 
 	// TODO Wenn ein Spieler gewinnt muss das Spiel beendet werden und gefragt ob man noch ein Spiel spielen will.
 
 	GameGrid jGameGridPlayer1 = new GameGrid(10, 10, 60, Color.green,
