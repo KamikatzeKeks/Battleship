@@ -11,11 +11,6 @@ import java.util.ListIterator;
 
 public class Battleship extends JFrame {
 
-	// TODO Kommentare hinzufügen
-	// TODO Überprüfen ob in der FleetSetterFrame nach einer Fehlerhaften
-	// eingabe nicht mehr als 5 * x Locations erzeugt werden
-	// TODO Wenn ein Spieler gewinnt muss das Spiel beendet werden und gefragt
-	// ob man noch ein Spiel spielen will.
 
 	GameGrid jGameGridPlayer1 = new GameGrid(10, 10, 60, Color.green,
 			"sprites/background.png");
@@ -26,7 +21,7 @@ public class Battleship extends JFrame {
 	JButton jBtnSetFleetPlayer2 = new JButton("Set Fleet Player 2");
 	JButton jBtnStartGame = new JButton("Start Game");
 	JButton jBtnShoot = new JButton("Shoot");
-	JButton jBtnInstantWin = new JButton("Reset");
+	JButton jBtnGameGridReset = new JButton("Reset");
 	JPanel jPanelButton = new JPanel();
 	Ship[] fleetPlayer1 = new Ship[5];
 	Ship[] fleetPlayer2 = new Ship[5];
@@ -50,7 +45,7 @@ public class Battleship extends JFrame {
 		jPanelButton.add(jBtnStartGame);
 		jPanelButton.add(jBtnShoot);
 		jPanelButton.add(jBtnSetFleetPlayer2);
-		jPanelButton.add(jBtnInstantWin);
+		jPanelButton.add(jBtnGameGridReset);
 
 		{
 			jBtnSetFleetPlayer1.setSize(new Dimension(100, 50));
@@ -108,9 +103,9 @@ public class Battleship extends JFrame {
 				}
 			});
 
-			jBtnInstantWin.addActionListener(new ActionListener() {
+			jBtnGameGridReset.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent evt) {
-					jBtnInstantWinActionPerformed(evt);
+					jBtnGameGridResetActionPerformed(evt);
 				}
 			});
 
@@ -394,7 +389,7 @@ public class Battleship extends JFrame {
 		battleshipRounds();
 	}
 
-	private void jBtnInstantWinActionPerformed(java.awt.event.ActionEvent evt) {
+	private void jBtnGameGridResetActionPerformed(java.awt.event.ActionEvent evt) {
 		int response = JOptionPane.showConfirmDialog(null,
 				"Reset Game and format C ? ", "Confirm",
 				JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
