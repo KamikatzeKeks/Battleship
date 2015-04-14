@@ -818,7 +818,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 	 * Beispiel: Carrier auf A1 bei 0 ° (>)  daraus ergibt sich das Startfeld Location(0,0) und die weiteren Locations: Location(1,0), Location(2,0),Location(3,0),Location(4,0)
 	 */
 
-	public void defineShipSetDirection() {
+	private void defineShipSetDirection() {
 
 		String selectedCarrierAngle;
 		String selectedDestroyer1Angle;
