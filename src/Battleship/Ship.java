@@ -24,6 +24,7 @@ import ch.aplu.jgamegrid.*;
  * @author Brian Korduan
  * @author Davis Fröse
  */
+
 public abstract class Ship extends Actor {
 	private int angle;
 	private int size;
