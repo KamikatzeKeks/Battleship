@@ -816,6 +816,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 	 * Generiert 5 Schiffsobjekte mit ihren jeweiligen Positionen. Nach dem einlesen der Startpositionen und des Winkels aus der GUI wird die Methode
 	 * @see getAllShipPositions verwendet um alle Weiteren Location Objekte eines Schiffes zu erzeugen. 
 	 * Beispiel: Carrier auf A1 bei 0 ° (>)  daraus ergibt sich das Startfeld Location(0,0) und die weiteren Locations: Location(1,0), Location(2,0),Location(3,0),Location(4,0)
+	 * @author Brian Korduan
 	 */
 
 	private void defineShipSetDirection() {
@@ -868,8 +869,7 @@ public class FleetSetterFrame extends javax.swing.JDialog {
 		patrolboatPositions = getAllShipPositions(shipsStartPositions[4],
 				selectedPatrolboatAngle, 2);
 
-		// TODO zu Ints ummünzen
-		// TODO Überprüfung, dass Schiffe nicht auf den selben Feldern stehen
+		
 		fleet[0] = new Carrier(Integer.parseInt(selectedCarrierAngle), 5,
 				carrierPositions);
 		fleet[1] = new Destroyer(Integer.parseInt(selectedDestroyer1Angle), 4,

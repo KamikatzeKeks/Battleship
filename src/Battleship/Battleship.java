@@ -380,7 +380,6 @@ public class Battleship extends JFrame {
 
 			JOptionPane.showMessageDialog(null,
 					"Es wurden noch nicht alle Schiffe gesetzt");
-
 		}
 
 	}
