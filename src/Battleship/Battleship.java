@@ -9,7 +9,8 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
-public class Battleship extends JFrame {
+public class Battleship extends JFrame {  // Hier wird die GUI vom Spielfeld erzeugt und das
+										  // Spiel gestartet.
 
 
 	GameGrid jGameGridPlayer1 = new GameGrid(10, 10, 60, Color.green,
@@ -153,9 +154,9 @@ public class Battleship extends JFrame {
 						playerShot = playerShotFrame.showDialog();
 						while (i.hasPrevious()) {
 							i.previous();
-						} // rudert den Iterator zurück damit er wieder von
+						} // Hier rudert den Iterator zurück damit er wieder von
 							// Anfang überprüft wird falls wieder etwas falsches
-							// eingegeben wurde.
+							// eingegeben wurde. Ist nicht ganz performant aber funktioniert.
 					}
 				}
 				ShotPlayer1(playerShot);
@@ -188,7 +189,6 @@ public class Battleship extends JFrame {
 
 		if (player1FleetDestroyed == 5) {
 
-			// TODO Handlings falls gewonnen
 			JOptionPane.showMessageDialog(null, "Player 2 won");
 			resetGame();
 
@@ -222,7 +222,7 @@ public class Battleship extends JFrame {
 
 	}
 
-	private void resetGame() {
+	private void resetGame() { // Funktion zum reseten des Spiels.
 
 		backroundGameGridPlayer1.clear();
 		backgroundGameGridPlayer2.clear();
@@ -258,9 +258,12 @@ public class Battleship extends JFrame {
 
 	}
 
-	private void ShotPlayer1(Location playerShot) {
-		player1Shots.add(playerShot);
-		for (Ship ship : fleetPlayer2) {
+	private void ShotPlayer1(Location playerShot) // Funktion überfrüf ob ein Schiff getroffen
+	{											  // und falls ja ob es versenkt wurde.
+												  // wenn alle Schiffe versenkt sind wird der 
+												  // Gewinner angezeigt
+		player1Shots.add(playerShot);			  
+		for (Ship ship : fleetPlayer2) {		  
 			int isHitOrDestroyed = ship.isHit(playerShot);
 			if (isHitOrDestroyed == 1) {
 				backgroundGameGridPlayer2.fillCell(playerShot, Color.red);
